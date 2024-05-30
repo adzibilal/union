@@ -16,8 +16,8 @@ const NavLink: React.FC<NavLinkProps> = ({ href, label }) => {
     return (
         <Link
             href={href}
-            className={` h-[70px] flex items-center justify-center px-4 uppercase cursor-pointer font-semibold hover:bg-u-orange-500/95 ${
-                isActive ? 'bg-u-orange-500' : ''
+            className={` h-[70px] flex items-center justify-center px-4 uppercase cursor-pointer font-semibold hover:bg-u-orange-500/95 hover:text-white ${
+                isActive ? 'bg-u-orange-500 text-white' : ''
             }`}>
             {label}
         </Link>

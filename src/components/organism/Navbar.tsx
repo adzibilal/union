@@ -6,7 +6,7 @@ import NavDropdown from '../atoms/NavDropdown'
 
 const Navbar = () => {
     return (
-        <div className='bg-zinc-900'>
+        <div className='bg-white shadow-sm'>
             <div className='max-container flex justify-between items-center'>
                 <Image
                     src={'/assets/images/horizontal-logo.png'}
@@ -17,7 +17,7 @@ const Navbar = () => {
 
                 <div className='h-full'>
                     {/* Navbar Links */}
-                    <div className='text-white flex h-full'>
+                    <div className='flex h-full'>
                         {/* NavLink */}
                         <NavLink href='/' label='Home' />
                         <NavLink href='/about' label='About Us' />
