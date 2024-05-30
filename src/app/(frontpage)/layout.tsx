@@ -1,3 +1,4 @@
+import Footer from '@/components/organism/Footer';
 import Navbar from '@/components/organism/Navbar';
 import React from 'react';
 
@@ -11,10 +12,7 @@ const FrontpageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
                 {children}
             </main>
 
-            {/* Add your footer component here */}
-            <footer>
-                {/* Footer content */}
-            </footer>
+           <Footer />
         </div>
     );
 };
