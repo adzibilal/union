@@ -4,6 +4,7 @@ import LanguageDropdown from "@/components/LanguageDropdown";
 import InfoBox from "@/components/organism/InfoBox";
 import SectionTitle from "@/components/molecules/SectionTitle";
 import AboutSection from "@/components/organism/AboutSection";
+import ProduceWorkSection from "@/components/organism/ProduceWorkSection";
 
 export default function Home() {
   const t = useTranslations('Index');
@@ -16,6 +17,8 @@ export default function Home() {
       <InfoBox />
 
       <AboutSection />
+
+      <ProduceWorkSection />
     </div>
   );
 }

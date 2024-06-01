@@ -17,9 +17,9 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ subTitle, title }) => {
                 className='opacity-5 -z-0 absolute -top-3 -left-3 w-32'
             />
             {/* sub title */}
-            <div className='font-extrabold text-u-orange-500'>{subTitle}</div>
+            <div className='font-extrabold text-u-orange-500 uppercase'>{subTitle}</div>
             {/* title */}
-            <div className='font-extrabold text-zinc-900 text-4xl leading-relaxed'>
+            <div className='font-extrabold text-zinc-900 text-4xl leading-relaxed uppercase'>
                 {title}
             </div>
         </div>
