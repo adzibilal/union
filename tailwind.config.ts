@@ -15,8 +15,8 @@ const config: Config = {
             },
             colors: {
                 'u-orange': {
-                    300: '#F59F61',
-                    500: '#E84E00'
+                    300: '#FFA500',
+                    500: '#FE7C04'
                 },
                 'u-gray': {
                     300: '#ADB5C3',
