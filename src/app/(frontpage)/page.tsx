@@ -5,14 +5,15 @@ import InfoBox from "@/components/organism/InfoBox";
 import SectionTitle from "@/components/molecules/SectionTitle";
 import AboutSection from "@/components/organism/AboutSection";
 import ProduceWorkSection from "@/components/organism/ProduceWorkSection";
+import CarouselHero from "@/components/organism/CarouselHero";
 
 export default function Home() {
   const t = useTranslations('Index');
   return (
     <div>
+      <CarouselHero />
       <h1>Home</h1>
       <p>{t('title')}</p>
-      <LanguageDropdown />
       
       <InfoBox />
 

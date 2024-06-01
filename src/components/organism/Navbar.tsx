@@ -3,13 +3,14 @@ import Link from 'next/link'
 import React from 'react'
 import NavLink from '../atoms/NavLink'
 import NavDropdown from '../atoms/NavDropdown'
+import LanguageDropdown from '../LanguageDropdown'
 
 const Navbar = () => {
     return (
         <div className='bg-white shadow-sm'>
             <div className='max-container flex justify-between items-center'>
                 <Image
-                    src={'/assets/images/horizontal-logo.png'}
+                    src={'/assets/images/logo-main.png'}
                     alt='Logo'
                     width={200}
                     height={50}
@@ -36,6 +37,8 @@ const Navbar = () => {
                                 { href: '/faq', label: 'FAQ' }
                             ]}
                         />
+
+                        <LanguageDropdown />
                     </div>
 
                     {/* Nav Mobile */}
