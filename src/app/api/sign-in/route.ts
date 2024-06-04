@@ -29,7 +29,8 @@ export async function POST(req: NextRequest, res: NextResponse) {
         name: user.name,
         email: user.email,
         image: user.image,
-        isActive: user.isActive
+        isActive: user.isActive,
+        role: user.role
     }
 
     await login(response)
