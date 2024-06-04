@@ -1,12 +1,35 @@
+'use client'
 import { UserTypeTable } from '@/types/admin/users/type'
 import Image from 'next/image'
 import React from 'react'
+import { FaEdit, FaTrash } from 'react-icons/fa'
 
 interface UserListItemProps {
     user: UserTypeTable
+    onChange: () => void
 }
 
 const UserListItem: React.FC<UserListItemProps> = props => {
+    const handleDeleteUser = async () => {
+        const conf = confirm('Apakah anda yakin ingin menghapus user ini?')
+        if (!conf) return
+        try {
+            const response = await fetch(`/api/cms/users/${props.user.id}`, {
+                method: 'DELETE'
+            })
+
+            if (response.ok) {
+                alert('User berhasil dihapus')
+            } else {
+                alert('Gagal menghapus user')
+            }
+        } catch (error) {
+            console.error('[DELETE USER]', error)
+            alert('Gagal menghapus user')
+        } finally {
+            props.onChange()
+        }
+    }
     return (
         <div className='bg-zinc-50 px-3 py-2 rounded-md flex justify-between items-center'>
             <div className='flex items-center gap-2'>
@@ -46,8 +69,14 @@ const UserListItem: React.FC<UserListItemProps> = props => {
                     } font-semibold`}>
                     {props.user.isActive ? 'Non Aktifkan' : 'Aktifkan'}
                 </button>
-                <button className='text-blue-500 font-semibold'>Edit</button>
-                <button className='text-red-500 font-semibold'>Delete</button>
+                <button className='text-blue-500 font-semibold'>
+                    <FaEdit />
+                </button>
+                <button
+                    className='text-red-500 font-semibold'
+                    onClick={() => handleDeleteUser()}>
+                    <FaTrash />
+                </button>
             </div>
         </div>
     )
