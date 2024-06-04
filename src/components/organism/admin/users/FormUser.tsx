@@ -175,22 +175,6 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
                 )}
             </div>
 
-            <div className='input-group'>
-                <label htmlFor='isActive'>Aktifkan:</label>
-                <label
-                    htmlFor='isActive'
-                    className='relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-u-orange-500'>
-                    <input
-                        type='checkbox'
-                        checked={user ? user.isActive : true}
-                        id='isActive'
-                        {...register('isActive')}
-                        className='peer sr-only'
-                    />
-
-                    <span className='absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6'></span>
-                </label>
-            </div>
 
             {submitError && <p className='text-red-500'>{submitError}</p>}
             <div className='flex items-center gap-3 justify-end'>

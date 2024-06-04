@@ -54,6 +54,10 @@ function UserList() {
     }, [currentPage, pageSize, keyword])
 
     const handlePageChange = (newPage: number) => {
+        if (newPage < 1 || newPage > totalPages) {
+            alert('Halaman tidak valid')
+            return 
+        }
         setCurrentPage(newPage)
     }
 
