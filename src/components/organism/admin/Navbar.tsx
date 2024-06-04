@@ -4,7 +4,7 @@ import React from 'react'
 
 const Navbar = () => {
     return (
-        <div className='border-b w-full h-[70px] bg-white'>
+        <div className='border-b w-full h-[70px] bg-white flex items-center justify-between p-3'>
             <form
                 action={async () => {
                     'use server'

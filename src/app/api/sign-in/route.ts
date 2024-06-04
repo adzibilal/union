@@ -1,6 +1,7 @@
 import { db } from '@/db'
 import { login } from '@/lib'
 import { NextRequest, NextResponse } from 'next/server'
+import bcrypt from "bcrypt";
 
 export async function POST(req: NextRequest, res: NextResponse) {
     const { email, password } = await req.json()
@@ -17,10 +18,12 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
 
     // verify password
-    if (user.password !== password) {
+    const match = await bcrypt.compare(password, user.password);
+
+    if (!match) {
         return new NextResponse('Invalid credentials', { status: 401 })
     }
-
+    
     const response = {
         id: user.id,
         name: user.name,
