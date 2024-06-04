@@ -3,9 +3,10 @@
 import UserListItem from '@/components/atoms/admin/users/UserListItem'
 import { UserTypeTable } from '@/types/admin/users/type'
 import React, { useState, useEffect, useRef } from 'react'
-import { FaChevronLeft, FaChevronRight, FaInfoCircle } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaInfoCircle, FaPlusCircle } from 'react-icons/fa'
 import { debounce } from 'lodash'
 import UserListSkeleton from './UserListSkeleton'
+import Link from 'next/link'
 
 function UserList() {
     const [users, setUsers] = useState<UserTypeTable[]>([])
@@ -68,8 +69,10 @@ function UserList() {
                     type='text'
                     placeholder='Cari pengguna'
                     onChange={e => handleChangeKeyword(e.target.value)}
-                    className='px-3 py-2 border border-zinc-300 rounded-md focus:outline-none'
+                    className='px-3 py-1 border border-zinc-300 rounded-md focus:outline-none w-[50%]'
                 />
+
+                <Link href={'/admin/users/create'} className="flex gap-3 text-white bg-u-orange-500 items-center px-3 py-1 rounded-md hover:opacity-85 cursor-pointer">Tambah User <FaPlusCircle  /> </Link>
             </div>
             {isLoading ? (
                 <UserListSkeleton />

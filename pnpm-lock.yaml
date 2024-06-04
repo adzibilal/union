@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@hookform/resolvers':
+        specifier: ^3.4.2
+        version: 3.4.2(react-hook-form@7.51.5(react@18.3.1))
       '@prisma/client':
         specifier: ^5.14.0
         version: 5.14.0(prisma@5.14.0)
@@ -35,12 +38,18 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+      react-hook-form:
+        specifier: ^7.51.5
+        version: 7.51.5(react@18.3.1)
       react-icons:
         specifier: ^5.2.1
         version: 5.2.1(react@18.3.1)
       swiper:
         specifier: ^11.1.4
         version: 11.1.4
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/bcrypt':
         specifier: ^5.0.2
@@ -124,6 +133,11 @@ packages:
 
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
+
+  '@hookform/resolvers@3.4.2':
+    resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
+    peerDependencies:
+      react-hook-form: ^7.0.0
 
   '@humanwhocodes/config-array@0.11.14':
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -1424,6 +1438,12 @@ packages:
     peerDependencies:
       react: ^18.3.1
 
+  react-hook-form@7.51.5:
+    resolution: {integrity: sha512-J2ILT5gWx1XUIJRETiA7M19iXHlG74+6O3KApzvqB/w8S5NQR7AbU8HVZrMALdmDgWpRPYiZJl0zx8Z4L2mP6Q==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+
   react-icons@5.2.1:
     resolution: {integrity: sha512-zdbW5GstTzXaVKvGSyTaBalt7HSfuK5ovrzlpyiWHAFXndXTdd/1hdDHI4xBM1Mn7YriT6aqESucFl9kEXzrdw==}
     peerDependencies:
@@ -1769,6 +1789,9 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod@3.23.8:
+    resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
+
 snapshots:
 
   '@alloc/quick-lru@5.2.0': {}
@@ -1832,6 +1855,10 @@ snapshots:
   '@formatjs/intl-localematcher@0.5.4':
     dependencies:
       tslib: 2.6.2
+
+  '@hookform/resolvers@3.4.2(react-hook-form@7.51.5(react@18.3.1))':
+    dependencies:
+      react-hook-form: 7.51.5(react@18.3.1)
 
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
@@ -3301,6 +3328,10 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
+  react-hook-form@7.51.5(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+
   react-icons@5.2.1(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -3723,3 +3754,5 @@ snapshots:
   yaml@2.4.2: {}
 
   yocto-queue@0.1.0: {}
+
+  zod@3.23.8: {}

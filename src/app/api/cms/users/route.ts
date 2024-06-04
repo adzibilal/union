@@ -57,14 +57,13 @@ export async function GET(req: NextRequest, res: NextResponse) {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
-    const { name, email } = await req.json()
+    const values = await req.json()
 
     const password = bcrypt.hashSync('Union2024', 12)
 
     const user = await db.user.create({
         data: {
-            name,
-            email,
+            ... values,
             password
         }
     })

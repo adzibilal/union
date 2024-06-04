@@ -1,6 +1,7 @@
 'use client'
 import { UserTypeTable } from '@/types/admin/users/type'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 
@@ -30,14 +31,50 @@ const UserListItem: React.FC<UserListItemProps> = props => {
             props.onChange()
         }
     }
+
+    const handleToggleUser = async () => {
+        const conf = confirm(
+            `Apakah anda yakin ingin ${
+                props.user.isActive ? 'menonaktifkan' : 'mengaktifkan'
+            } user ini?`
+        )
+        if (!conf) return
+        try {
+            const response = await fetch(`/api/cms/users/${props.user.id}`, {
+                method: 'PATCH',
+                body: JSON.stringify({
+                    isActive: !props.user.isActive
+                })
+            })
+
+            if (response.ok) {
+                alert('User berhasil diubah')
+            } else {
+                alert('Gagal mengubah user')
+            }
+        } catch (error) {
+            console.error('[TOGGLE USER]', error)
+            alert('Gagal mengubah user')
+        } finally {
+            props.onChange()
+        }
+    }
+
     return (
-        <div className='bg-zinc-50 px-3 py-2 rounded-md flex justify-between items-center'>
+        <div
+            className={`bg-zinc-50 px-3 py-2 rounded-md flex justify-between items-center group ${
+                props.user.isActive ? '' : 'opacity-50'
+            }`}>
             <div className='flex items-center gap-2'>
                 {/* if user has image */}
                 {props.user.image ? (
-                    <div className="className='w-10 h-10 rounded-full'">
-                        <Image src={props.user.image} alt='' fill />
-                    </div>
+                    <Image
+                        src={props.user.image}
+                        alt=''
+                        width={200}
+                        height={200}
+                        className='w-10 h-10 rounded-full object-cover'
+                    />
                 ) : (
                     <div className='w-10 h-10 rounded-full bg-u-orange-500 flex items-center justify-center text-white font-semibold'>
                         {props.user.name.charAt(0)}
@@ -62,16 +99,19 @@ const UserListItem: React.FC<UserListItemProps> = props => {
             </div>
 
             {/* actions item */}
-            <div className='flex items-center gap-3'>
+            <div className='items-center gap-3 hidden group-hover:flex'>
                 <button
+                    onClick={() => handleToggleUser()}
                     className={`${
-                        props.user.isActive ? 'text-red-500' : 'text-green-500'
-                    } font-semibold`}>
+                        props.user.isActive ? 'bg-red-500' : 'bg-green-500'
+                    } font-semibold text-white text-xs px-3 py-1 rounded-md cursor-pointer hover:opacity-85`}>
                     {props.user.isActive ? 'Non Aktifkan' : 'Aktifkan'}
                 </button>
-                <button className='text-blue-500 font-semibold'>
+                <Link
+                    href={`/admin/users/${props.user.id}`}
+                    className='text-blue-500 font-semibold'>
                     <FaEdit />
-                </button>
+                </Link>
                 <button
                     className='text-red-500 font-semibold'
                     onClick={() => handleDeleteUser()}>
