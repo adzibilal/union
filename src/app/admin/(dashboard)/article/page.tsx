@@ -1,11 +1,11 @@
 import Breadcrumb from '@/components/molecules/admin/Breadcrumb'
-import UserList from '@/components/organism/admin/users/UserList'
+import ArticleList from '@/components/organism/admin/article/ArticleList'
 import React from 'react'
 
-const UsersPage = () => {
+const ArticleAdminPage = () => {
     const items = [
         { href: '/admin/dashboard', children: 'Dashboard' },
-        { children: 'Users' }
+        { children: 'Article' }
     ]
     return (
         <div className='p-5 w-full'>
@@ -13,10 +13,10 @@ const UsersPage = () => {
                 <Breadcrumb items={items} />
             </div>
             <div className='bg-white shadow-sm border rounded-md w-full p-6 max-w-screen-lg mx-auto'>
-                <UserList />
+                <ArticleList />
             </div>
         </div>
     )
 }
 
-export default UsersPage
+export default ArticleAdminPage
