@@ -46,7 +46,7 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
                         alt={props.article.title}
                         width={800}
                         height={500}
-                        className='rounded-md aspect-video w-full'
+                        className='rounded-md aspect-video w-full object-cover'
                     />
                 ) : (
                     <div className='rounded-md aspect-video w-full bg-zinc-200 flex items-center justify-center'>
@@ -83,7 +83,7 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
             {/* actions item */}
             <div className='absolute top-4 right-4 bg-white shadow-sm rounded-full px-3 py-1 items-center gap-3 hidden group-hover:flex'>
                 <Link
-                    href={`/admin/articles/${props.article.slug}`}
+                    href={`/admin/article/${props.article.slug}`}
                     className='text-blue-500 font-semibold'>
                     <FaEdit />
                 </Link>

@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google'
 import './globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
+import NextTopLoader from 'nextjs-toploader'
 
 const poppins = Poppins({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -12,7 +13,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
     title: 'Union Creative Design',
-    description: 'Union Creative Design adalah perusahaan jasa desain interior dan konstruksi yang berkomitmen pada profesionalisme, good corporate governance, dan layanan prima untuk memenuhi kebutuhan desain dan kenyamanan Anda.'
+    description:
+        'Union Creative Design adalah perusahaan jasa desain interior dan konstruksi yang berkomitmen pada profesionalisme, good corporate governance, dan layanan prima untuk memenuhi kebutuhan desain dan kenyamanan Anda.'
 }
 
 export default async function RootLayout({
@@ -27,6 +29,7 @@ export default async function RootLayout({
             <body className={poppins.className}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
+                    <NextTopLoader showAtBottom color='#FE7C04' />
                 </NextIntlClientProvider>
             </body>
         </html>

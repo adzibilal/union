@@ -125,6 +125,21 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
         setSelectedCategory(category)
     }
 
+    useEffect(() => {
+        if (article) {
+            reset({
+                id: article.id,
+                title: article.title,
+                image: article.image || '',
+                content: article.content
+            })
+            setSelectedCategory(
+                article.ArticleCategory.map(item => item.category)
+            )
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [article])
+
     return (
         <form className='space-y-4 mt-5' onSubmit={handleSubmit(onSubmit)}>
             <DropzoneImage
@@ -152,7 +167,14 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
 
             <div className='input-group'>
                 <label htmlFor='category'>Category</label>
-                <CategoryInput onCategoryChange={handleCategoryChange} />
+                <CategoryInput
+                    initialCategories={
+                        article
+                            ? article.ArticleCategory.map(item => item.category)
+                            : []
+                    }
+                    onCategoryChange={handleCategoryChange}
+                />
             </div>
 
             {submitError && <p className='text-red-500'>{submitError}</p>}
