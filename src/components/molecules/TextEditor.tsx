@@ -1,15 +1,17 @@
 'use client'
 import { Color } from '@tiptap/extension-color'
+import Image from '@tiptap/extension-image'
 import ListItem from '@tiptap/extension-list-item'
 import Placeholder from '@tiptap/extension-placeholder'
 import TextStyle from '@tiptap/extension-text-style'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import React, { use, useEffect } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import {
     FaBold,
     FaCode,
     FaCodeBranch,
+    FaImage,
     FaItalic,
     FaListOl,
     FaListUl,
@@ -17,8 +19,13 @@ import {
     FaQuoteLeft,
     FaRedo,
     FaStrikethrough,
-    FaUndo
+    FaUndo,
+    FaYoutube
 } from 'react-icons/fa'
+import ModalUploadImage from './ModalUploadImage'
+import ImageResize from 'tiptap-extension-resize-image'
+import Youtube from '@tiptap/extension-youtube'
+import ModalEmbedYoutube from './ModalEmbedYoutube'
 
 interface TextEditorProps {
     content?: string
@@ -26,6 +33,8 @@ interface TextEditorProps {
 }
 
 const TextEditor = ({ content, onContentChange }: TextEditorProps) => {
+    const [isModalImageOpen, setIsModalImageOpen] = useState(false)
+    const [isModalEmbedYoutube, setIsModalEmbedYoutube] = useState(false)
     const editor = useEditor({
         extensions: [
             Color.configure({ types: [TextStyle.name, ListItem.name] }),
@@ -44,7 +53,10 @@ const TextEditor = ({ content, onContentChange }: TextEditorProps) => {
                 emptyEditorClass: 'is-editor-empty',
                 emptyNodeClass: 'my-custom-is-empty-class',
                 placeholder: 'Write something amazing...'
-            })
+            }),
+            Image,
+            ImageResize,
+            Youtube
         ],
         content,
         onUpdate: ({ editor }) => {
@@ -230,6 +242,36 @@ const TextEditor = ({ content, onContentChange }: TextEditorProps) => {
                                 .focus()
                                 .setColor(e.target.value)
                                 .run()
+                        }}
+                    />
+                    <button
+                        type='button'
+                        onClick={() => setIsModalImageOpen(true)}
+                        className={`menu-editor`}>
+                        <FaImage />
+                    </button>
+                    <button
+                        type='button'
+                        onClick={() => setIsModalEmbedYoutube(true)}
+                        className={`menu-editor`}>
+                        <FaYoutube />   
+                    </button>
+                    <ModalUploadImage
+                        isOpen={isModalImageOpen}
+                        onClose={() => setIsModalImageOpen(false)}
+                        onImageUploaded={url => {
+                            editor.chain().focus().setImage({ src: url }).run()
+                        }}
+                    />
+                    <ModalEmbedYoutube
+                        isOpen={isModalEmbedYoutube}
+                        onClose={() => setIsModalEmbedYoutube(false)}
+                        onYoutubeEmbeded={url => {
+                            editor.commands.setYoutubeVideo({
+                                src: url,
+                                width: 640,
+                                height: 480
+                            })
                         }}
                     />
                 </div>

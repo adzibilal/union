@@ -24,7 +24,7 @@
 }
 
 .tiptap.ProseMirror {
-    @apply !m-3 focus:outline-none;
+    @apply !p-5 focus:outline-none;
 }
 
 .tiptap h1 {
@@ -66,6 +66,10 @@
 /* code block */
 .tiptap pre code {
     @apply block;
+}
+/* youtube */
+.tiptap iframe[src*='youtube'] {
+    @apply w-full aspect-video;
 }
 .menu-editor {
     @apply w-7 h-7 flex items-center justify-center cursor-pointer bg-zinc-50 border hover:bg-zinc-100 rounded-md text-zinc-800 disabled:opacity-50 disabled:cursor-not-allowed;
