@@ -14,3 +14,8 @@ export interface ArticleTableType {
     }
     createdAt: string
 }
+
+export interface CategoryType {
+    id: string
+    name: string
+}
