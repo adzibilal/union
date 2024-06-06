@@ -10,6 +10,7 @@ import { debounce } from 'lodash'
 import Link from 'next/link'
 import { ArticleTableType } from '@/types/admin/articles/type'
 import ArticleListItem from '@/components/atoms/admin/articles/ArticleListItem'
+import ArticleListSkeleton from './ArticleListSkeleton'
 
 function ArticleList() {
     const [articles, setArticles] = useState<ArticleTableType[]>([])
@@ -86,11 +87,7 @@ function ArticleList() {
                 </Link>
             </div>
             {isLoading ? (
-                // <UserListSkeleton />
-                <div className='text-center text-zinc-200 mt-5 flex flex-col items-center justify-center'>
-                    <FaInfoCircle size={150} className='mb-3' />
-                    Loading...
-                </div>
+                <ArticleListSkeleton />
             ) : (
                 <div className=''>
                     {/* Tampilkan daftar pengguna (users) */}

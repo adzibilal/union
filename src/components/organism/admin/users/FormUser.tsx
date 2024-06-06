@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import { UserTypeTable } from '@/types/admin/users/type'
 import Image from 'next/image'
 import Link from 'next/link'
+import LoadingSpinner from '@/components/atoms/LoadingSpinner'
 
 const userSchema = z.object({
     id: z.string().optional(),
@@ -43,6 +44,7 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
     const [submitError, setSubmitError] = useState<string | null>(null)
     const [previewImage, setPreviewImage] = useState<string | null>(null)
     const fileInputRef = React.useRef<HTMLInputElement>(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     useEffect(() => {
         if (user) {
@@ -91,6 +93,7 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
     }
 
     const onSubmit = async (data: z.infer<typeof userSchema>) => {
+        setIsLoading(true)
         try {
             // if file input is not empty, upload the file
             if (fileInputRef.current?.files?.length) {
@@ -125,6 +128,7 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
             setSubmitError('Terjadi kesalahan saat menyimpan data pengguna.')
             console.error(error)
         }
+        setIsLoading(false)
     }
 
     return (
@@ -143,6 +147,7 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
                 <label htmlFor='image'>Image:</label>
                 <input
                     type='file'
+                    accept='image/*'
                     id='image'
                     ref={fileInputRef}
                     onChange={handleImageChange}
@@ -175,7 +180,6 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
                 )}
             </div>
 
-
             {submitError && <p className='text-red-500'>{submitError}</p>}
             <div className='flex items-center gap-3 justify-end'>
                 <Link
@@ -185,10 +189,12 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
                 </Link>
                 <button
                     type='submit'
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded'>
+                    disabled={isLoading}
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed'>
                     {user ? 'Simpan Perubahan' : 'Buat Pengguna'}
                 </button>
             </div>
+            {isLoading && <LoadingSpinner />}
         </form>
     )
 }

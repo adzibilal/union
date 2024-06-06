@@ -12,6 +12,7 @@ import TextEditor from '@/components/molecules/TextEditor'
 import DropzoneImage from '@/components/molecules/DropzoneImage'
 import CategoryInput from '@/components/molecules/CategoryInput'
 import { Session } from '@/lib'
+import LoadingSpinner from '@/components/atoms/LoadingSpinner'
 
 const articleSchema = z.object({
     id: z.string().optional(),
@@ -37,6 +38,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
         resolver: zodResolver(articleSchema)
     })
 
+    const [isLoading, setIsLoading] = useState(false)
     const [submitError, setSubmitError] = useState<string | null>(null)
     const [fileImage, setFileImage] = useState<File | null>(null)
     const [selectedCategory, setSelectedCategory] = useState<CategoryType[]>([])
@@ -46,6 +48,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
     }
 
     const handleUploadImage = async () => {
+        setIsLoading(true)
         const file = fileImage // Add null check for e.target.files
         const formData = new FormData()
         if (file) {
@@ -68,9 +71,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
             console.error(error)
             return 'error'
         }
+        setIsLoading(false)
     }
 
     const onSubmit = async (data: z.infer<typeof articleSchema>) => {
+        setIsLoading(true)
         try {
             if (fileImage) {
                 const imageUrl = await handleUploadImage()
@@ -115,6 +120,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
             setSubmitError('Terjadi kesalahan saat menyimpan data artikel.')
             console.error(error)
         }
+        setIsLoading(false)
     }
 
     const handleFileDrop = (file: File) => {
@@ -186,10 +192,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
                 </Link>
                 <button
                     type='submit'
-                    className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded'>
+                    disabled={isLoading}
+                    className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed'>
                     {article ? 'Simpan Perubahan' : 'Posting Article'}
                 </button>
             </div>
+            {isLoading && <LoadingSpinner />}
         </form>
     )
 }

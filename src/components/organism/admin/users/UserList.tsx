@@ -2,8 +2,13 @@
 
 import UserListItem from '@/components/atoms/admin/users/UserListItem'
 import { UserTypeTable } from '@/types/admin/users/type'
-import React, { useState, useEffect, useRef } from 'react'
-import { FaChevronLeft, FaChevronRight, FaInfoCircle, FaPlusCircle } from 'react-icons/fa'
+import React, { useState, useEffect } from 'react'
+import {
+    FaChevronLeft,
+    FaChevronRight,
+    FaInfoCircle,
+    FaPlusCircle
+} from 'react-icons/fa'
 import { debounce } from 'lodash'
 import UserListSkeleton from './UserListSkeleton'
 import Link from 'next/link'
@@ -15,48 +20,33 @@ function UserList() {
     const [totalPages, setTotalPages] = useState(1)
     const [pageSize, setPageSize] = useState(10)
     const [keyword, setKeyword] = useState('')
-    const abortControllerRef = useRef<AbortController | null>(null)
 
     async function fetchUsers() {
         setIsLoading(true)
-        if (abortControllerRef.current) {
-            abortControllerRef.current.abort()
-        }
-
-        abortControllerRef.current = new AbortController()
-        const signal = abortControllerRef.current.signal
 
         try {
             const response = await fetch(
-                `/api/cms/users?page=${currentPage}&pageSize=${pageSize}&keyword=${keyword}`,
-                { signal }
+                `/api/cms/users?page=${currentPage}&pageSize=${pageSize}&keyword=${keyword}`
             )
             const data = await response.json()
 
             setUsers(data.users)
             setTotalPages(data.totalPages)
         } catch (error: any) {
-            if (error.name !== 'AbortError') {
-                console.error('Error fetching users:', error)
-            }
+            console.error('Error fetching users:', error)
         }
         setIsLoading(false)
     }
 
     useEffect(() => {
         fetchUsers()
-        return () => {
-            if (abortControllerRef.current) {
-                abortControllerRef.current.abort()
-            }
-        }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentPage, pageSize, keyword])
 
     const handlePageChange = (newPage: number) => {
         if (newPage < 1 || newPage > totalPages) {
             alert('Halaman tidak valid')
-            return 
+            return
         }
         setCurrentPage(newPage)
     }
@@ -76,7 +66,11 @@ function UserList() {
                     className='px-3 py-1 border border-zinc-300 rounded-md focus:outline-none w-[50%]'
                 />
 
-                <Link href={'/admin/users/create'} className="flex gap-3 text-white bg-u-orange-500 items-center px-3 py-1 rounded-md hover:opacity-85 cursor-pointer">Tambah User <FaPlusCircle  /> </Link>
+                <Link
+                    href={'/admin/users/create'}
+                    className='flex gap-3 text-white bg-u-orange-500 items-center px-3 py-1 rounded-md hover:opacity-85 cursor-pointer'>
+                    Tambah User <FaPlusCircle />{' '}
+                </Link>
             </div>
             {isLoading ? (
                 <UserListSkeleton />

@@ -8,7 +8,7 @@ const UsersPage = () => {
         { children: 'Users' }
     ]
     return (
-        <div className='p-5 w-full'>
+        <div className='p-5 w-full bg-zinc-50'>
             <div className='mb-5'>
                 <Breadcrumb items={items} />
             </div>

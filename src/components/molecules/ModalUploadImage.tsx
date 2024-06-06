@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React, { useRef, useState } from 'react'
 import { FaImage } from 'react-icons/fa'
+import LoadingSpinner from '../atoms/LoadingSpinner'
 
 interface ModalUploadImageProps {
     isOpen: boolean
@@ -15,8 +16,10 @@ const ModalUploadImage: React.FC<ModalUploadImageProps> = ({
 }) => {
     const fileInputUpload = useRef<HTMLInputElement>(null) // Move useRef outside of handleUploadImage function
     const [previewImage, setPreviewImage] = useState<string | null>(null)
+    const [isLoading, setIsLoading] = useState(false)
 
     const handleUploadImage = async () => {
+        setIsLoading(true)
         const file = fileInputUpload.current?.files?.[0] // Add null check for e.target.files
         const formData = new FormData()
         if (file) {
@@ -41,6 +44,7 @@ const ModalUploadImage: React.FC<ModalUploadImageProps> = ({
             console.error(error)
             return 'error'
         }
+        setIsLoading(false)
     }
 
     const handleChangeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +58,7 @@ const ModalUploadImage: React.FC<ModalUploadImageProps> = ({
 
     return (
         <div className=''>
+            {isLoading && <LoadingSpinner />}
             {isOpen && (
                 <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
                     <div className='bg-white p-5 rounded-lg w-96'>
@@ -93,8 +98,9 @@ const ModalUploadImage: React.FC<ModalUploadImageProps> = ({
                             </button>
                             <button
                                 type='button'
+                                disabled={!previewImage || isLoading}
                                 onClick={handleUploadImage}
-                                className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded'>
+                                className='bg-blue-500 hover:bg-blue-700 text-white font-semibold text-sm py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed'>
                                 Upload
                             </button>
                         </div>

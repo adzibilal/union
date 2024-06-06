@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
+import LoadingSpinner from '../../LoadingSpinner'
 
 interface UserListItemProps {
     user: UserTypeTable
@@ -11,7 +12,9 @@ interface UserListItemProps {
 }
 
 const UserListItem: React.FC<UserListItemProps> = props => {
+    const [isLoading, setIsLoading] = React.useState(false)
     const handleDeleteUser = async () => {
+        setIsLoading(true)
         const conf = confirm('Apakah anda yakin ingin menghapus user ini?')
         if (!conf) return
         try {
@@ -30,6 +33,7 @@ const UserListItem: React.FC<UserListItemProps> = props => {
         } finally {
             props.onChange()
         }
+        setIsLoading(false)
     }
 
     const handleToggleUser = async () => {
@@ -39,6 +43,7 @@ const UserListItem: React.FC<UserListItemProps> = props => {
             } user ini?`
         )
         if (!conf) return
+        setIsLoading(true)
         try {
             const response = await fetch(`/api/cms/users/${props.user.id}`, {
                 method: 'PATCH',
@@ -58,6 +63,7 @@ const UserListItem: React.FC<UserListItemProps> = props => {
         } finally {
             props.onChange()
         }
+        setIsLoading(false)
     }
 
     return (
@@ -118,6 +124,7 @@ const UserListItem: React.FC<UserListItemProps> = props => {
                     <FaTrash />
                 </button>
             </div>
+            {isLoading && <LoadingSpinner />}
         </div>
     )
 }

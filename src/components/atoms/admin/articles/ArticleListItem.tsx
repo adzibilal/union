@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { FaEdit, FaImage, FaTrash } from 'react-icons/fa'
+import LoadingSpinner from '../../LoadingSpinner'
 
 interface ArticleListItemProps {
     article: ArticleTableType
@@ -13,9 +14,11 @@ interface ArticleListItemProps {
 }
 
 const ArticleListItem: React.FC<ArticleListItemProps> = props => {
+    const [isLoading, setIsLoading] = React.useState(false)
     const handleDeleteArticle = async () => {
         const conf = confirm('Apakah anda yakin ingin menghapus article ini?')
         if (!conf) return
+        setIsLoading(true)
         try {
             const response = await fetch(
                 `/api/cms/articles/${props.article.slug}`,
@@ -35,10 +38,12 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
         } finally {
             props.onChange()
         }
+        setIsLoading(false)
     }
 
     return (
         <div className={`bg-zinc-50 px-3 py-2 rounded-md relative  group `}>
+            {isLoading && <LoadingSpinner />}
             <div className='flex flex-col w-full items-center gap-3'>
                 {props.article.image ? (
                     <Image
