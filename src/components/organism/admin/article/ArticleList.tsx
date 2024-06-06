@@ -80,7 +80,7 @@ function ArticleList() {
                 />
 
                 <Link
-                    href={'/admin/users/create'}
+                    href={'/admin/article/create'}
                     className='flex gap-3 text-white bg-u-orange-500 items-center px-3 py-1 rounded-md hover:opacity-85 cursor-pointer'>
                     Buat Article <FaPlusCircle />{' '}
                 </Link>
@@ -107,7 +107,7 @@ function ArticleList() {
                     {articles.length === 0 && !isLoading ? (
                         <div className='text-center text-zinc-200 mt-5 flex flex-col items-center justify-center'>
                             <FaInfoCircle size={150} className='mb-3' />
-                            Tidak ada pengguna
+                            Tidak ada article
                         </div>
                     ) : (
                         <div className='flex items-center gap-3 mt-3'>
