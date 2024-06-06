@@ -44,8 +44,8 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
                     <Image
                         src={props.article.image}
                         alt={props.article.title}
-                        width={200}
-                        height={200}
+                        width={800}
+                        height={500}
                         className='rounded-md aspect-video w-full'
                     />
                 ) : (
@@ -56,11 +56,11 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
 
                 <div className='w-full'>
                     <div className='flex gap-3 items-center mb-2'>
-                        {props.article.categories.map((category, index) => (
+                        {props.article.ArticleCategory.map((item, index) => (
                             <div
                                 key={index}
                                 className='bg-orange-100 text-orange-500 font-semibold text-xs px-2 py-1 rounded-md'>
-                                {category.name}
+                                {item.category.name}
                             </div>
                         ))}
                     </div>

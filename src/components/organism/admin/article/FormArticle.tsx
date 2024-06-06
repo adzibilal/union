@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
-import { useRouter } from 'next/navigation'
+import { redirect, useRouter } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArticleTableType, CategoryType } from '@/types/admin/articles/type'
@@ -11,6 +11,7 @@ import { FaImage } from 'react-icons/fa'
 import TextEditor from '@/components/molecules/TextEditor'
 import DropzoneImage from '@/components/molecules/DropzoneImage'
 import CategoryInput from '@/components/molecules/CategoryInput'
+import { Session } from '@/lib'
 
 const articleSchema = z.object({
     id: z.string().optional(),
@@ -21,9 +22,10 @@ const articleSchema = z.object({
 
 type FormArticleProps = {
     article?: ArticleTableType
+    session?: Session
 }
 
-const FormArticle: React.FC<FormArticleProps> = ({ article }) => {
+const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
     const router = useRouter()
     const {
         register,
@@ -37,23 +39,90 @@ const FormArticle: React.FC<FormArticleProps> = ({ article }) => {
 
     const [submitError, setSubmitError] = useState<string | null>(null)
     const [fileImage, setFileImage] = useState<File | null>(null)
+    const [selectedCategory, setSelectedCategory] = useState<CategoryType[]>([])
 
     const handleContentChange = (content: string) => {
-        console.debug(content)
         setValue('content', content)
     }
 
+    const handleUploadImage = async () => {
+        const file = fileImage // Add null check for e.target.files
+        const formData = new FormData()
+        if (file) {
+            formData.append('file', file)
+        }
+        formData.append('upload_preset', 'union_upload')
+
+        try {
+            const response = await fetch(
+                'https://api.cloudinary.com/v1_1/dr2sbogew/image/upload',
+                {
+                    method: 'POST',
+                    body: formData
+                }
+            )
+            const data = await response.json()
+            const imageUrl = data.secure_url
+            return imageUrl
+        } catch (error) {
+            console.error(error)
+            return 'error'
+        }
+    }
+
     const onSubmit = async (data: z.infer<typeof articleSchema>) => {
-        console.debug(data)
+        try {
+            if (fileImage) {
+                const imageUrl = await handleUploadImage()
+                if (imageUrl === 'error') {
+                    setSubmitError('Terjadi kesalahan saat mengunggah gambar')
+                    return
+                } else {
+                    data.image = imageUrl
+                }
+            }
+
+            const payload = {
+                title: data.title,
+                slug:
+                    data.title.replace(/\s/g, '-').toLowerCase() +
+                    Math.floor(1000 + Math.random() * 9000),
+                content: data.content,
+                image: data.image || null,
+                authorId: session?.user.id || null,
+                categories: selectedCategory.map(category => category.id)
+            }
+
+            if (article) {
+                await fetch(`/api/cms/articles/${article.slug}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({
+                        title: payload.title,
+                        slug: payload.slug,
+                        content: payload.content,
+                        image: payload.image,
+                        categories: payload.categories
+                    })
+                })
+            } else {
+                await fetch('/api/cms/articles', {
+                    method: 'POST',
+                    body: JSON.stringify(payload)
+                })
+            }
+            router.push('/admin/article')
+        } catch (error) {
+            setSubmitError('Terjadi kesalahan saat menyimpan data artikel.')
+            console.error(error)
+        }
     }
 
     const handleFileDrop = (file: File) => {
-        console.debug(file)
         setFileImage(file)
     }
 
     const handleCategoryChange = (category: CategoryType[]) => {
-        console.debug(category)
+        setSelectedCategory(category)
     }
 
     return (

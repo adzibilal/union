@@ -4,9 +4,11 @@ export interface ArticleTableType {
     slug: string
     content: string
     image: string | null
-    categories: {
-        id: string
-        name: string
+    ArticleCategory: {
+        category: {
+            id: string
+            name: string
+        }
     }[]
     author: {
         id: string
@@ -18,4 +20,13 @@ export interface ArticleTableType {
 export interface CategoryType {
     id: string
     name: string
+}
+
+export interface ArticlePayload {
+    title: string
+    slug: string
+    content: string
+    image: string | null
+    authorId: string
+    categories: string[]
 }

@@ -1,4 +1,5 @@
 import { db } from '@/db'
+import { ArticlePayload } from '@/types/admin/articles/type'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest, res: NextResponse) {
@@ -30,10 +31,14 @@ export async function GET(req: NextRequest, res: NextResponse) {
             slug: true,
             content: true,
             image: true,
-            categories: {
+            ArticleCategory: {
                 select: {
-                    id: true,
-                   name: true
+                    category: {
+                        select: {
+                            id: true,
+                            name: true
+                        }
+                    }
                 }
             },
             author: {
@@ -65,11 +70,24 @@ export async function GET(req: NextRequest, res: NextResponse) {
 }
 
 export async function POST(req: NextRequest, res: NextResponse) {
-    const values = await req.json()
+    const values: ArticlePayload = await req.json()
 
     const article = await db.article.create({
         data: {
-            ...values
+            title: values.title,
+            slug: values.slug,
+            content: values.content,
+            image: values.image,
+            authorId: values.authorId,
+            ArticleCategory: {
+                create: values.categories.map(categoryId => ({
+                    category: {
+                        connect: {
+                            id: categoryId
+                        }
+                    }
+                }))
+            }
         }
     })
 
