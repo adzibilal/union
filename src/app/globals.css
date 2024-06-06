@@ -24,7 +24,7 @@
 }
 
 .tiptap.ProseMirror {
-    @apply !p-5 focus:outline-none;
+    @apply !p-5 focus:outline-none min-h-[50vh];
 }
 
 .tiptap h1 {

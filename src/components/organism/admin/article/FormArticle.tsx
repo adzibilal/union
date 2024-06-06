@@ -12,9 +12,9 @@ import TextEditor from '@/components/molecules/TextEditor'
 
 const articleSchema = z.object({
     id: z.string().optional(),
-    title: z.string(),
+    title: z.string().min(5).max(255),
     slug: z.string(),
-    content: z.string(),
+    content: z.string().min(5),
     author: z.string(),
     date: z.string()
 })
@@ -44,8 +44,12 @@ const FormArticle: React.FC<FormArticleProps> = ({ article }) => {
         setValue('content', content)
     }
 
+    const onSubmit = async (data: z.infer<typeof articleSchema>) => {
+        console.debug(data)
+    }
+
     return (
-        <form className='space-y-4 mt-5'>
+        <form className='space-y-4 mt-5' onSubmit={handleSubmit(onSubmit)}>
             <div id='image-input' className='cursor-pointer'>
                 {/* {props.article.image ? (
                     <Image
@@ -65,18 +69,23 @@ const FormArticle: React.FC<FormArticleProps> = ({ article }) => {
                 </div>
             </div>
             <div className='input-group'>
-                <label htmlFor='name'>Title:</label>
-                <input type='text' id='title' />
-                {/* <input type='text' id='name' {...register('name')} /> */}
-                {/* {errors.name && (
-                    <p className='text-red-500'>{errors.name.message}</p>
-                )} */}
+                <label htmlFor='title'>Title:</label>
+                <input type='text' id='title' {...register('title')} />
+                {errors.title && (
+                    <p className='text-red-500'>{errors.title.message}</p>
+                )}
             </div>
 
-            <TextEditor
-                content={article ? article.content : ''}
-                onContentChange={handleContentChange}
-            />
+            <div className='input-group'>
+                <label htmlFor='content'>Content:</label>
+                <TextEditor
+                    content={article ? article.content : ''}
+                    onContentChange={handleContentChange}
+                />
+                {errors.content && (
+                    <p className='text-red-500'>{errors.content.message}</p>
+                )}
+            </div>
 
             {submitError && <p className='text-red-500'>{submitError}</p>}
             <div className='flex items-center gap-3 justify-end'>

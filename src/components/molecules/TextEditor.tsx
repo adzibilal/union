@@ -64,7 +64,7 @@ const TextEditor = ({ content, onContentChange }: TextEditorProps) => {
         }
     })
     return (
-        <div className='border rounded-md min-h-[50vh]'>
+        <div className='border rounded-md'>
             {editor && (
                 <div className='flex items-center gap-2 flex-wrap p-3 rounded-t-md border-b'>
                     <button
