@@ -4,6 +4,7 @@ import './globals.css'
 import { NextIntlClientProvider } from 'next-intl'
 import { getLocale, getMessages } from 'next-intl/server'
 import NextTopLoader from 'nextjs-toploader'
+import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -30,6 +31,7 @@ export default async function RootLayout({
                 <NextIntlClientProvider messages={messages}>
                     {children}
                     <NextTopLoader showAtBottom color='#FE7C04' />
+                    <Toaster/>
                 </NextIntlClientProvider>
             </body>
         </html>

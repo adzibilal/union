@@ -2,7 +2,7 @@ import NavLink from '@/components/atoms/admin/NavLink'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { BiHome, BiNews, BiPhotoAlbum, BiUser } from 'react-icons/bi'
+import { BiCategory, BiHome, BiNews, BiPhotoAlbum, BiUser } from 'react-icons/bi'
 const SideBar = () => {
     return (
         <div className='w-full h-full bg-white border-r py-5'>
@@ -29,6 +29,11 @@ const SideBar = () => {
                     href='/admin/article'
                     label='Article'
                     icon={<BiNews />}
+                />
+                <NavLink
+                    href='/admin/categories'
+                    label='Categories'
+                    icon={<BiCategory />}
                 />
                 <NavLink href='/admin/users' label='Users' icon={<BiUser />} />
             </div>

@@ -1,4 +1,4 @@
-import { updateSession, getSession } from '@/lib'
+import { updateSession, getSession, Session, logout } from '@/lib'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function middleware(request: NextRequest) {
@@ -19,12 +19,13 @@ export async function middleware(request: NextRequest) {
         request.nextUrl.pathname !== '/admin/sign-in'
     ) {
         // Ambil session
-        const session = await getSession()
+        const session:Session = await getSession()
 
         // Jika tidak ada session atau session kedaluwarsa, redirect ke /admin/sign-in
         if (!session || new Date(session.expires) <= new Date()) {
             return NextResponse.redirect(new URL('/admin/sign-in', request.url))
         }
+
     }
 
     // Jika ada session atau path tidak berawalan /admin, update session

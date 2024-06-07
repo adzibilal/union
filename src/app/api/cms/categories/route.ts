@@ -50,6 +50,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
 export async function POST(req: NextRequest, res: NextResponse) {
     const values = await req.json()
+    console.log(values)
 
     const category = await db.category.create({
         data: {

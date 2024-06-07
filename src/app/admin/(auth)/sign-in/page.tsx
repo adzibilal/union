@@ -1,6 +1,7 @@
 'use client'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
+import toast from 'react-hot-toast'
 
 const SignPage = () => {
     const router = useRouter()
@@ -11,7 +12,7 @@ const SignPage = () => {
         const email = formData.get('email') as string
         const password = formData.get('password') as string
 
-        const response = await fetch('/api/sign-in', {
+        const response = await fetch('/api/cms/sign-in', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -20,14 +21,11 @@ const SignPage = () => {
         })
 
         if (response.ok) {
-
-            // use server login function from lib
-            
-        
             router.replace('/admin/dashboard')
         } else {
             const message = await response.text()
             console.error(message)
+            toast.error(message)
         }
     }
 
