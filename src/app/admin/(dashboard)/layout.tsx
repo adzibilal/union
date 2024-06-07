@@ -9,7 +9,6 @@ export default async function DashboardLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
-   
     return (
         <div className='grid grid-cols-[250px_1fr] h-screen bg-zinc-50'>
             {/* sidebar */}
@@ -18,7 +17,7 @@ export default async function DashboardLayout({
             <div className=''>
                 {/* navbar */}
                 <Navbar />
-                {children}
+                <div className='dashboard-container'>{children}</div>
             </div>
         </div>
     )

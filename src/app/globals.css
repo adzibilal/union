@@ -78,3 +78,8 @@
 .menu-editor.active {
     @apply bg-u-orange-500 text-white;
 }
+
+.dashboard-container {
+    height: calc(100vh - 70px);
+    @apply overflow-x-hidden overflow-y-auto
+}

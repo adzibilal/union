@@ -11,6 +11,7 @@ import Link from 'next/link'
 import { CategoryType } from '@/types/admin/articles/type'
 import CategoryListItem from '@/components/atoms/admin/categories/CategoryListItem'
 import ModalFormCategory from '@/components/molecules/admin/category/ModalFormCategory'
+import CategoriesListSkeleton from './CategoriesListSkeleton'
 
 function CategoriesList() {
     const [categories, setCategories] = useState<CategoryType[]>([])
@@ -114,7 +115,7 @@ function CategoriesList() {
                 </div>
             </div>
             {isLoading ? (
-                <div className=''>loading</div>
+                <CategoriesListSkeleton />
             ) : (
                 <div className=''>
                     {/* Tampilkan daftar pengguna (users) */}

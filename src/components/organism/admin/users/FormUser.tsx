@@ -8,6 +8,7 @@ import { UserTypeTable } from '@/types/admin/users/type'
 import Image from 'next/image'
 import Link from 'next/link'
 import LoadingSpinner from '@/components/atoms/LoadingSpinner'
+import { FaCamera, FaImage } from 'react-icons/fa'
 
 const userSchema = z.object({
     id: z.string().optional(),
@@ -27,9 +28,10 @@ const userSchema = z.object({
 
 type FormUserProps = {
     user?: UserTypeTable
+    isMyProfile?: boolean
 }
 
-const FormUser: React.FC<FormUserProps> = ({ user }) => {
+const FormUser: React.FC<FormUserProps> = ({ user, isMyProfile }) => {
     const router = useRouter()
     const {
         register,
@@ -133,18 +135,27 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='space-y-4 mt-5'>
-            {previewImage && (
-                <Image
-                    src={previewImage}
-                    alt='Preview'
-                    width={200}
-                    height={200}
-                    className='w-40 h-w-40 aspect-square object-cover rounded-full'
-                />
-            )}
-            {/* image */}
-            <div className='input-group'>
-                <label htmlFor='image'>Image:</label>
+            <div
+                className='relative cursor-pointer w-max'
+                onClick={() => fileInputRef.current?.click()}>
+                {previewImage ? (
+                    <Image
+                        src={previewImage}
+                        alt='Preview'
+                        width={200}
+                        height={200}
+                        className='w-40 h-w-40 aspect-square object-cover rounded-full'
+                    />
+                ) : (
+                    <div className='w-40 h-w-40 aspect-square bg-gray-200 rounded-full flex items-center justify-center text-zinc-600 text-3xl'>
+                        <FaImage />
+                    </div>
+                )}
+                <div className='absolute bottom-2 right-2 bg-blue-500 text-white p-3 rounded-full'>
+                    <FaCamera />
+                </div>
+            </div>
+            <div className='hidden'>
                 <input
                     type='file'
                     accept='image/*'
@@ -169,7 +180,7 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
                 )}
             </div>
 
-            <div className='input-group'>
+            <div className={`${isMyProfile ? 'hidden' : 'input-group'}`}>
                 <label htmlFor='role'>Role:</label>
                 <select id='role' {...register('role')}>
                     <option value='USER'>User</option>
@@ -182,11 +193,13 @@ const FormUser: React.FC<FormUserProps> = ({ user }) => {
 
             {submitError && <p className='text-red-500'>{submitError}</p>}
             <div className='flex items-center gap-3 justify-end'>
-                <Link
-                    href={'/admin/users/'}
-                    className='bg-zinc-100 hover:bg-zinc-200 text-zinc-500 font-semibold text-sm py-2 px-4 rounded'>
-                    Cancel
-                </Link>
+                {!isMyProfile && (
+                    <Link
+                        href={'/admin/users/'}
+                        className='bg-zinc-100 hover:bg-zinc-200 text-zinc-500 font-semibold text-sm py-2 px-4 rounded'>
+                        Cancel
+                    </Link>
+                )}
                 <button
                     type='submit'
                     disabled={isLoading}

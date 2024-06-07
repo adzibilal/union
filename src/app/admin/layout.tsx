@@ -8,7 +8,7 @@ export default async function AdminLayout({
     children: React.ReactNode
 }>) {
     return (
-       <div className="">
+       <div>
         {children}
        </div>
     )
