@@ -23,3 +23,8 @@ export function diffForHumans(inpdate: string): string {
         return date.toLocaleDateString()
     }
 }
+
+// remove tag html from string
+export function removeTagHTML(str: string): string {
+    return str.replace(/(<([^>]+)>)/gi, '')
+}
