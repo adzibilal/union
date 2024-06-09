@@ -14,24 +14,27 @@ generator client {
 }
 
 model User {
-  id        String    @id @default(auto()) @map("_id") @db.ObjectId
-  email     String    @unique
-  name      String?
-  image     String?
-  password  String
-  isActive  Boolean   @default(true)
-  role      String    @default("USER")
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
-  Article   Article[]
+  id         String       @id @default(auto()) @map("_id") @db.ObjectId
+  email      String       @unique
+  name       String?
+  image      String?
+  password   String
+  isActive   Boolean      @default(true)
+  role       String       @default("USER")
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  Article    Article[]
+  Portofolio Portofolio[]
 }
 
 model Article {
   id              String            @id @default(auto()) @map("_id") @db.ObjectId
   title           String
   slug            String            @unique
+  resume          String?
   content         String
   image           String?
+  isPublished     Boolean           @default(false)
   author          User              @relation(fields: [authorId], references: [id])
   authorId        String            @db.ObjectId
   createdAt       DateTime          @default(now())
@@ -55,4 +58,46 @@ model Category {
   createdAt       DateTime          @default(now())
   updatedAt       DateTime          @updatedAt
   ArticleCategory ArticleCategory[]
+}
+
+model Portofolio {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  slug            String            @unique
+  resume          String?
+  content         String
+  image           String?
+  designPrice     Int
+  buildPrice      Int
+  size            String
+  projectType     String
+  location        String
+  client          String
+  material        String
+  isPublished     Boolean           @default(false)
+  author          User              @relation(fields: [authorId], references: [id])
+  authorId        String            @db.ObjectId
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  PortofolioStyle PortofolioStyle[]
+}
+
+model PortofolioStyle {
+  id           String      @id @default(auto()) @map("_id") @db.ObjectId
+  portofolio   Portofolio  @relation(fields: [portofolioId], references: [id])
+  portofolioId String      @db.ObjectId
+  style        StyleDesign @relation(fields: [styleId], references: [id])
+  styleId      String      @db.ObjectId
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+}
+
+model StyleDesign {
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  name            String
+  description     String?
+  image           String?
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  PortofolioStyle PortofolioStyle[]
 }
