@@ -40,7 +40,7 @@ const ArticleDetailPage = () => {
                     alt=''
                 />
             </div>
-            <div className='max-w-[1000px] mx-auto -mt-[250px]'>
+            <div className='max-w-[1000px] mx-auto -mt-[250px] max-sm:px-6'>
                 {article ? (
                     <div className='my-10'>
                         {article.image && (
@@ -53,11 +53,11 @@ const ArticleDetailPage = () => {
                             />
                         )}
 
-                        <h1 className='text-4xl font-bold my-5'>
+                        <h1 className='text-4xl font-bold my-5 max-sm:text-xl'>
                             {article.title}
                         </h1>
 
-                        <div className='flex items-center justify-between border-b pb-5 mb-5'>
+                        <div className='flex items-center justify-between border-b pb-5 mb-5 max-sm:flex-col max-sm:items-start max-sm:gap-3'>
                             <div className='flex gap-3 items-center'>
                                 {article.ArticleCategory.map((item, index) => (
                                     <div
@@ -67,7 +67,7 @@ const ArticleDetailPage = () => {
                                     </div>
                                 ))}
                             </div>
-                            <div className='flex justify-between items-center text-sm text-zinc-700 gap-3'>
+                            <div className='flex justify-between items-center text-sm text-zinc-700 gap-3 max-sm:text-xs max-sm:w-full'>
                                 <div className='flex items-center gap-2'>
                                     <BiCalendar />
                                     <div className=''>

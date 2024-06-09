@@ -21,18 +21,20 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
         <div className='aspect-video lg:aspect-[21/8] relative'>
             <div className='w-full h-[50%] bg-gradient-to-b from-zinc-950/50 to-transparent absolute top-0 left-0 z-10'></div>
             <Image src={src} alt='hero' layout='fill' objectFit='cover' />
-            <div className='max-container absolute left-[50%] bottom-20 translate-x-[-50%] z-20'>
-                <div className='text-white text-4xl font-extrabold text-center'>
+            <div className='max-container absolute left-[50%] bottom-5 md:bottom-20 translate-x-[-50%] z-20 max-sm:w-full'>
+                <div className='text-white text-lg md:text-4xl font-extrabold text-center'>
                     <h1 className='uppercase'>{title}</h1>
                     {subTitle && (
-                        <h2 className='text-white text-lg'>{subTitle}</h2>
+                        <h2 className='text-white max-sm:font-light text-sm md:text-lg'>
+                            {subTitle}
+                        </h2>
                     )}
                     {/* button cta */}
                     {linkButton && (
                         <div className='mt-6'>
                             <Link
                                 href={linkButton}
-                                className='bg-u-orange-500 hover:bg-u-orange-300 text-white text-lg uppercase px-6 py-3 '>
+                                className='bg-u-orange-500 hover:bg-u-orange-300 text-white text-sm md:text-lg uppercase px-6 py-3 max-sm:px-3 max-sm:py-2 '>
                                 {button}
                             </Link>
                         </div>

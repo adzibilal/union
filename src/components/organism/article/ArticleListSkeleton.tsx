@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArticleListSkeleton = () => {
     return (
-        <div className='grid grid-cols-2 gap-5 my-10'>
+        <div className='grid grid-cols-2 max-sm:grid-cols-1 gap-5 my-10'>
             {[1, 2, 3, 4, 5, 6].map(index => (
                 <div
                     key={index}

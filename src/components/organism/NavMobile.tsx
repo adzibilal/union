@@ -1,12 +1,15 @@
 'use client'
+import { useTranslations } from 'next-intl'
 import { redirect, useRouter } from 'next/navigation'
 import React from 'react'
+import { BiCross, BiXCircle } from 'react-icons/bi'
 import { FaBars } from 'react-icons/fa'
 import { FaX } from 'react-icons/fa6'
 
 const NavMobile = () => {
     const [isOpen, setIsOpen] = React.useState(false)
     const router = useRouter()
+    const t = useTranslations('Navbar')
 
     const toggleNav = () => {
         setIsOpen(!isOpen)
@@ -39,18 +42,26 @@ const NavMobile = () => {
                             e.stopPropagation()
                         }
                     }
-                    className='bg-white shadow-md h-screen w-[95vw] md:w-[80vw] p-3'>
-                    <div className='flex justify-end'>
-                        <FaX className='text-2xl text-u-orange-500' />
+                    className='bg-white shadow-md h-screen w-[95vw] md:w-[80vw] p-3 flex flex-col items-end'>
+                    <div
+                        className='flex justify-end bg-zinc-100 p-2 w-max mb-2 rounded-sm cursor-pointer hover:bg-u-orange-500 hover:text-white'
+                        onClick={
+                            // stop propagation
+                            e => {
+                                e.stopPropagation()
+                                toggleNav()
+                            }
+                        }>
+                        <BiXCircle className='text-2xl' />
                     </div>
-                    <div className='flex flex-col gap-3 items-center'>
+                    <div className='flex flex-col gap-3 items-center w-full'>
                         <div
                             onClick={e => {
                                 e.stopPropagation()
                                 handleItemClick('/')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Home
+                            {t('home')}
                         </div>
                         <div
                             onClick={e => {
@@ -58,7 +69,7 @@ const NavMobile = () => {
                                 handleItemClick('/about')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            About
+                            {t('about')}
                         </div>
                         <div
                             onClick={e => {
@@ -66,7 +77,7 @@ const NavMobile = () => {
                                 handleItemClick('/services')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Services
+                            {t('services')}
                         </div>
                         <div
                             onClick={e => {
@@ -74,7 +85,7 @@ const NavMobile = () => {
                                 handleItemClick('/portofolio')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Portofolio
+                            {t('portofolio')}
                         </div>
                         <div
                             onClick={e => {
@@ -82,7 +93,7 @@ const NavMobile = () => {
                                 handleItemClick('/articles')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Articles
+                            {t('articles')}
                         </div>
                         <div
                             onClick={e => {
@@ -90,7 +101,7 @@ const NavMobile = () => {
                                 handleItemClick('/style-quiz')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Style Quiz
+                            {t('style-quiz')}
                         </div>
                         <div
                             onClick={e => {
@@ -98,7 +109,7 @@ const NavMobile = () => {
                                 handleItemClick('/calculator')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Calculator
+                            {t('calculator')}
                         </div>
                         <div
                             onClick={e => {
@@ -106,7 +117,7 @@ const NavMobile = () => {
                                 handleItemClick('/contact')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            Contact
+                            {t('contact')}
                         </div>
                         <div
                             onClick={e => {
@@ -114,7 +125,7 @@ const NavMobile = () => {
                                 handleItemClick('/faq')
                             }}
                             className='bg-zinc-100 py-1 w-full rounded-sm text-center cursor-pointer hover:bg-u-orange-500 hover:text-white'>
-                            FAQ
+                            {t('faq')}
                         </div>
                     </div>
                 </div>

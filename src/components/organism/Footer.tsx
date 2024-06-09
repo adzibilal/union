@@ -13,7 +13,7 @@ const Footer = () => {
         <div className='bg-zinc-900 mt-36'>
             <div className='max-container pt-6'>
                 <div className='bg-u-orange-500 p-6 -mt-20'>
-                    <div className='bg-zinc-200 -mt-16 flex justify-around items-center py-5'>
+                    <div className='bg-zinc-200 -mt-16 flex justify-around items-center py-5 max-sm:hidden'>
                         <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
                         <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
                         <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
@@ -30,7 +30,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-[2fr_1fr_1fr] pt-16 pb-8'>
+                <div className='grid grid-cols-[2fr_1fr_1fr] max-sm:grid-cols-1 max-sm:gap-10 pt-16 pb-8'>
                     <div className='flex flex-col gap-3'>
                         <div className='text-lg font-extrabold uppercase text-white'>
                             Information
@@ -105,10 +105,10 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-between items-center uppercase text-white font-semibold border-t-2 border-zinc-700 pt-5 pb-10">
-                    <div className="">Allright Reserved - UNION CREATIVE DESIGN &copy; 2024</div>
+                <div className="flex justify-between items-center uppercase text-white font-semibold border-t-2 border-zinc-700 pt-5 pb-10 max-sm:flex-col">
+                    <div className="max-sm:text-center max-sm:mb-5">Allright Reserved - UNION CREATIVE DESIGN &copy; 2024</div>
 
-                    <div className="flex gap-10">
+                    <div className="flex gap-10 max-sm:text-xs">
                         <Link href="/">
                             <div className="text-white">Privacy Policy</div>
                         </Link>
