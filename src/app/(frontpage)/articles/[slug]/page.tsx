@@ -1,6 +1,7 @@
 'use client'
 import ContentRender from '@/components/molecules/ContentRender'
 import ArticleDetailSkeleton from '@/components/organism/article/ArticleDetailSkeleton'
+import RelatedArticles from '@/components/organism/article/RelatedArticles'
 import { ArticleTableType } from '@/types/admin/articles/type'
 import { diffForHumans } from '@/utils'
 import Image from 'next/image'
@@ -88,6 +89,8 @@ const ArticleDetailPage = () => {
                         </div>
 
                         <ContentRender html={article.content} />
+
+                        <RelatedArticles slug={article.slug} />
                     </div>
                 ) : (
                     <ArticleDetailSkeleton />
