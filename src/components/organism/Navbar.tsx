@@ -13,7 +13,7 @@ const Navbar = () => {
     return (
         <div className='bg-white shadow-sm'>
             <div className='max-container flex justify-between items-center'>
-                <div className='py-3'>
+                <div className='max-lg:py-3'>
                     <Link href='/'>
                         <Image
                             src={'/assets/images/logo-main.png'}

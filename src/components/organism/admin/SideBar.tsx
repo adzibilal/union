@@ -35,6 +35,11 @@ const SideBar = () => {
                     label='Categories'
                     icon={<BiCategory />}
                 />
+                <NavLink
+                    href='/admin/style-design'
+                    label='Style Design'
+                    icon={<BiCategory />}
+                />
                 <NavLink href='/admin/users' label='Users' icon={<BiUser />} />
             </div>
         </div>
