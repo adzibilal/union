@@ -33,7 +33,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ slug }) => {
         <div>
             {relatedArticles && (
                 <div className='mt-20'>
-                    <h1 className='font-semibold text-2xl text-center'>
+                    <h1 className='font-semibold text-2xl text-center mb-5'>
                         Related Articles
                     </h1>
 
@@ -51,7 +51,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ slug }) => {
                                         className='aspect-video object-cover rounded-md shadow-lg max-sm:w-full'
                                     />
                                 )}
-                                <div className=''>
+                                <div className='max-sm:flex max-sm:flex-col max-sm:w-full max-sm:gap-2 max-sm:text-center max-sm:justify-center max-sm:items-center'>
                                     <Link
                                         href={`/articles/${article.slug}`}
                                         className='text-lg font-semibold cursor-pointer hover:underline'>
