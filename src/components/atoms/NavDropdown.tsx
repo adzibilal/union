@@ -21,7 +21,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ label, submenu }) => {
                 {label}
                 <FaChevronDown className='ml-2' />
             </div>
-            <div className='absolute top-[70px] right-0 w-max bg-white hidden group-hover:flex flex-col shadow-md'>
+            <div className='absolute top-[100%] right-0 w-max bg-white hidden group-hover:flex flex-col shadow-md z-50'>
                 {submenu.map((child, index) => (
                     <Link
                         key={index}

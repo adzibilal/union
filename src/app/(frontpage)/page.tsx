@@ -14,9 +14,7 @@ export default function Home() {
     return (
         <div>
             <CarouselHero />
-            <h1>Home</h1>
-            <p>{t('title')}</p>
-
+            <br /><br />
             <InfoBox />
 
             <AboutSection />

@@ -1,5 +1,17 @@
 {
     "Index": {
         "title": "Halo Dunia!"
+    },
+    "Navbar": {
+        "home": "Beranda",
+        "about": "Tentang Kami",
+        "services": "Layanan Kami",
+        "portofolio": "Portofolio Kami",
+        "articles": "Artikel",
+        "pages": "Halaman",
+        "style-quiz": "Style Quiz",
+        "calculator": "Kalkulator Biaya",
+        "contact": "Kontak",
+        "faq": "FAQ"
     }
 }

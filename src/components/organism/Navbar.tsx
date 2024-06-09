@@ -4,44 +4,51 @@ import React from 'react'
 import NavLink from '../atoms/NavLink'
 import NavDropdown from '../atoms/NavDropdown'
 import LanguageDropdown from '../LanguageDropdown'
+import NavMobile from './NavMobile'
+import { useTranslations } from 'next-intl'
 
 const Navbar = () => {
+    const t = useTranslations('Navbar')
+
     return (
         <div className='bg-white shadow-sm'>
             <div className='max-container flex justify-between items-center'>
-                <Image
-                    src={'/assets/images/logo-main.png'}
-                    alt='Logo'
-                    width={200}
-                    height={50}
-                />
+                <div className='py-3'>
+                    <Link href='/'>
+                        <Image
+                            src={'/assets/images/logo-main.png'}
+                            alt='Logo'
+                            width={150}
+                            height={50}
+                        />
+                    </Link>
+                </div>
 
-                <div className='h-full'>
+                <div className='h-full flex gap-3 items-center'>
                     {/* Navbar Links */}
-                    <div className='flex h-full'>
+                    <div className='h-full hidden lg:flex'>
                         {/* NavLink */}
-                        <NavLink href='/' label='Home' />
-                        <NavLink href='/about' label='About Us' />
-                        <NavLink href='/services' label='Our Services' />
-                        <NavLink href='/portofolio' label='Our Portofolio' />
-                        <NavLink href='/articles' label='Article' />
+                        <NavLink href='/' label={t('home')} />
+                        <NavLink href='/about' label={t('about')} />
+                        <NavLink href='/services' label={t('services')} />
+                        <NavLink href='/portofolio' label={t('portofolio')} />
+                        <NavLink href='/articles' label={t('articles')} />
                         <NavDropdown
-                            label='Pages'
+                            label={t('pages')}
                             submenu={[
-                                { href: '/style-quiz', label: 'Style Quiz' },
+                                { href: '/style-quiz', label: t('style-quiz') },
                                 {
                                     href: '/calculator',
-                                    label: 'Kalkulator Biaya'
+                                    label: t('calculator')
                                 },
-                                { href: '/contact', label: 'Contact' },
-                                { href: '/faq', label: 'FAQ' }
+                                { href: '/contact', label: t('contact') },
+                                { href: '/faq', label: t('faq') }
                             ]}
                         />
-
-                        <LanguageDropdown />
                     </div>
-
+                    <LanguageDropdown />
                     {/* Nav Mobile */}
+                    <NavMobile />
                 </div>
             </div>
         </div>

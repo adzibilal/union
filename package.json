@@ -24,6 +24,7 @@
     "@tiptap/starter-kit": "^2.4.0",
     "bcrypt": "^5.1.1",
     "cookies-next": "^4.2.1",
+    "flag-icons": "^7.2.3",
     "jose": "^5.3.0",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",

@@ -1,5 +1,17 @@
 {
     "Index": {
         "title": "Hello world!"
+    },
+    "Navbar" : {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Our Services",
+        "portofolio": "Our Portofolio",
+        "articles": "Article",
+        "pages": "Pages",
+        "style-quiz": "Style Quiz",
+        "calculator": "Price Calculator",
+        "contact": "Contact",
+        "faq": "FAQ"
     }
 }
