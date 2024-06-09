@@ -4,7 +4,7 @@ import React from 'react'
 
 const ArticlePages = () => {
     return (
-        <div>
+        <div className='bg-zinc-50 pb-10'>
             <PageHeader
                 title='Articles'
                 subtitle='List of articles that we have published.'

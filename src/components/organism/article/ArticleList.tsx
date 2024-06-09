@@ -5,6 +5,7 @@ import ArticleItem from './ArticleItem'
 import { debounce } from 'lodash'
 import toast from 'react-hot-toast'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import ArticleListSkeleton from './ArticleListSkeleton'
 
 const ArticleList = () => {
     const [articles, setArticles] = useState<ArticleTableType[]>([])
@@ -50,46 +51,54 @@ const ArticleList = () => {
     }, 500)
 
     return (
-        <div className='max-container'>
-            <input
-                type='text'
-                placeholder='Cari artikel...'
-                className='w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none mt-20'
-                onChange={e => handleChangeKeyword(e.target.value)}
-            />
-
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-20 mt-10'>
-                {articles.map(article => (
-                    <ArticleItem key={article.id} article={article} />
-                ))}
-            </div>
-
-            <div className='flex items-center gap-3 mt-3 justify-center'>
-                <button
-                    className='cursor-pointer bg-zinc-50 rounded-md px-2 py-2 text-u-orange-500 hover:bg-u-orange-500 hover:text-white'
-                    onClick={() => handlePageChange(currentPage - 1)}
-                    disabled={currentPage === 1}>
-                    <FaChevronLeft size={10} />
-                </button>
-                <span className='text-sm text-zinc-700'>
-                    Halaman
+        <div className='max-container !px-5'>
+            {articles && articles.length === 0 ? (
+                <ArticleListSkeleton />
+            ) : (
+                <>
                     <input
-                        type='number'
-                        value={currentPage}
-                        onChange={e => handlePageChange(Number(e.target.value))}
-                        className='w-10 mx-3 px-2 py-1 border border-zinc-300 rounded-md text-center focus:outline-none '
-                        name=''
-                        id=''
+                        type='text'
+                        placeholder='Cari artikel...'
+                        className='w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none mt-20'
+                        onChange={e => handleChangeKeyword(e.target.value)}
                     />
-                    dari {totalPages}
-                </span>
-                <button
-                    className='cursor-pointer bg-zinc-50 rounded-md px-2 py-2 text-u-orange-500 hover:bg-u-orange-500 hover:text-white'
-                    onClick={() => handlePageChange(currentPage + 1)}
-                    disabled={currentPage === totalPages}>
-                    <FaChevronRight size={10} />
-                </button>
-            </div>
+
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20 mt-10'>
+                        {articles.map(article => (
+                            <ArticleItem key={article.id} article={article} />
+                        ))}
+                    </div>
+
+                    <div className='flex items-center gap-3 mt-3 justify-center'>
+                        <button
+                            className='cursor-pointer bg-zinc-50 rounded-md px-2 py-2 text-u-orange-500 hover:bg-u-orange-500 hover:text-white'
+                            onClick={() => handlePageChange(currentPage - 1)}
+                            disabled={currentPage === 1}>
+                            <FaChevronLeft size={10} />
+                        </button>
+                        <span className='text-sm text-zinc-700'>
+                            Halaman
+                            <input
+                                type='number'
+                                value={currentPage}
+                                onChange={e =>
+                                    handlePageChange(Number(e.target.value))
+                                }
+                                className='w-10 mx-3 px-2 py-1 border border-zinc-300 rounded-md text-center focus:outline-none '
+                                name=''
+                                id=''
+                            />
+                            dari {totalPages}
+                        </span>
+                        <button
+                            className='cursor-pointer bg-zinc-50 rounded-md px-2 py-2 text-u-orange-500 hover:bg-u-orange-500 hover:text-white'
+                            onClick={() => handlePageChange(currentPage + 1)}
+                            disabled={currentPage === totalPages}>
+                            <FaChevronRight size={10} />
+                        </button>
+                    </div>
+                </>
+            )}
         </div>
     )
 }

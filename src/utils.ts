@@ -17,10 +17,11 @@ export function diffForHumans(inpdate: string): string {
         return `${Math.floor(minutes)} minutes ${minutes > 1 ? 'ago' : ''}`
     } else if (hours < 24) {
         return `${Math.floor(hours)} hours ${hours > 1 ? 'ago' : ''}`
-    } else if (days < 7) {
+    } else if (days < 1) {
         return `${Math.floor(days)} days ${days > 1 ? 'ago' : ''}`
     } else {
-        return date.toLocaleDateString()
+        // format = Tuesday, April 23 2024
+        return moment(date).format('dddd, MMMM DD YYYY')
     }
 }
 

@@ -103,7 +103,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
                     method: 'PATCH',
                     body: JSON.stringify({
                         title: payload.title,
-                        slug: payload.slug,
+                        slug: article.slug,
                         content: payload.content,
                         image: payload.image,
                         categories: payload.categories
