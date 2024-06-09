@@ -40,7 +40,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ slug }) => {
                     <div className=''>
                         {relatedArticles.map(article => (
                             <div
-                                className='flex items-center gap-3 shadow-md p-3 rounded-md mb-5 cursor-pointer hover:shadow-lg transition-all duration-300 ease-in-out'
+                                className='flex items-center max-sm:flex-col gap-3 shadow-md p-3 rounded-md mb-5 cursor-pointer hover:shadow-lg transition-all duration-300 ease-in-out'
                                 key={article.id}>
                                 {article.image && (
                                     <Image
@@ -48,7 +48,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ slug }) => {
                                         alt={article.title}
                                         width={200}
                                         height={100}
-                                        className='aspect-video object-cover rounded-md shadow-lg'
+                                        className='aspect-video object-cover rounded-md shadow-lg max-sm:w-full'
                                     />
                                 )}
                                 <div className=''>
@@ -57,7 +57,7 @@ const RelatedArticles: React.FC<RelatedArticlesProps> = ({ slug }) => {
                                         className='text-lg font-semibold cursor-pointer hover:underline'>
                                         {article.title}
                                     </Link>
-                                    <div className='flex items-center gap-2 text-sm text-gray-500'>
+                                    <div className='flex items-center gap-2 text-sm text-gray-500 max-sm:text-xs max-sm:flex-col max-sm:my-2'>
                                         <div className='flex items-center gap-1'>
                                             <BiCalendar />
                                             <div className=''>
