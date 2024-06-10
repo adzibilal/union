@@ -28,6 +28,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         select: {
             id: true,
             title: true,
+            resume: true,
             slug: true,
             content: true,
             image: true,
@@ -47,6 +48,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
                     name: true
                 }
             },
+            isPublished: true,
             createdAt: true
         },
         orderBy: {
@@ -75,9 +77,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
     const article = await db.article.create({
         data: {
             title: values.title,
+            resume: values.resume,
             slug: values.slug,
             content: values.content,
             image: values.image,
+            isPublished: values.isPublished,
             authorId: values.authorId,
             ArticleCategory: {
                 create: values.categories.map(categoryId => ({

@@ -1,13 +1,16 @@
 'use client'
+import LoadingSpinner from '@/components/atoms/LoadingSpinner'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
 import toast from 'react-hot-toast'
 
 const SignPage = () => {
     const router = useRouter()
+    const [isLoading, setIsLoading] = React.useState(false)
 
     const signIn = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        setIsLoading(true)
         const formData = new FormData(e.currentTarget)
         const email = formData.get('email') as string
         const password = formData.get('password') as string
@@ -27,6 +30,7 @@ const SignPage = () => {
             console.error(message)
             toast.error(message)
         }
+        setIsLoading(false)
     }
 
     return (
@@ -81,11 +85,14 @@ const SignPage = () => {
                 <div>
                     <button
                         type='submit'
-                        className='flex w-full justify-center rounded-md bg-u-orange-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
-                        Sign in
+                        disabled={isLoading}
+                        className='flex w-full justify-center disabled:opacity-50 disabled:cursor-not-allowed rounded-md bg-u-orange-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'>
+                        {isLoading ? 'Signing in...' : 'Sign in'}
                     </button>
                 </div>
             </form>
+
+            {isLoading && <LoadingSpinner />}
         </div>
     )
 }

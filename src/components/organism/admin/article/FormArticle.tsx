@@ -17,8 +17,10 @@ import LoadingSpinner from '@/components/atoms/LoadingSpinner'
 const articleSchema = z.object({
     id: z.string().optional(),
     title: z.string().min(5).max(255),
+    resume: z.string().min(5).max(255),
     image: z.string().optional(),
-    content: z.string().min(5)
+    content: z.string().min(5),
+    isPublished: z.boolean().optional()
 })
 
 type FormArticleProps = {
@@ -42,6 +44,9 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
     const [submitError, setSubmitError] = useState<string | null>(null)
     const [fileImage, setFileImage] = useState<File | null>(null)
     const [selectedCategory, setSelectedCategory] = useState<CategoryType[]>([])
+    const [isPublishedState, setIsPublishedState] = useState(
+        article?.isPublished || false
+    )
 
     const handleContentChange = (content: string) => {
         setValue('content', content)
@@ -89,11 +94,13 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
 
             const payload = {
                 title: data.title,
+                resume: data.resume,
                 slug:
                     data.title.replace(/\s/g, '-').toLowerCase() +
                     Math.floor(1000 + Math.random() * 9000),
                 content: data.content,
                 image: data.image || null,
+                isPublished: data.isPublished || false,
                 authorId: session?.user.id || null,
                 categories: selectedCategory.map(category => category.id)
             }
@@ -103,9 +110,11 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
                     method: 'PATCH',
                     body: JSON.stringify({
                         title: payload.title,
+                        resume: payload.resume,
                         slug: article.slug,
                         content: payload.content,
                         image: payload.image,
+                        isPublished: payload.isPublished,
                         categories: payload.categories
                     })
                 })
@@ -136,6 +145,7 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
             reset({
                 id: article.id,
                 title: article.title,
+                resume: article.resume,
                 image: article.image || '',
                 content: article.content
             })
@@ -160,6 +170,15 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
                 )}
             </div>
 
+            {/* resume */}
+            <div className='input-group'>
+                <label htmlFor='resume'>Resume:</label>
+                <input type='text' id='resume' {...register('resume')} />
+                {errors.resume && (
+                    <p className='text-red-500'>{errors.resume.message}</p>
+                )}
+            </div>
+
             <div className='input-group'>
                 <label htmlFor='content'>Content:</label>
                 <TextEditor
@@ -181,6 +200,28 @@ const FormArticle: React.FC<FormArticleProps> = ({ article, session }) => {
                     }
                     onCategoryChange={handleCategoryChange}
                 />
+            </div>
+
+            {/* isPublished */}
+            <div className='input-group'>
+                <label htmlFor='isPublished'>Published:</label>
+                <label
+                    htmlFor='isPublished'
+                    className='relative inline-block h-8 w-14 cursor-pointer rounded-full bg-gray-300 transition [-webkit-tap-highlight-color:_transparent] has-[:checked]:bg-u-orange-500'>
+                    <input
+                        type='checkbox'
+                        className='hidden peer'
+                        id='isPublished'
+                        onClick={() => setIsPublishedState(!isPublishedState)}
+                        checked={isPublishedState}
+                        {...register('isPublished')}
+                    />
+
+                    <span className='absolute inset-y-0 start-0 m-1 size-6 rounded-full bg-white transition-all peer-checked:start-6'></span>
+                </label>
+                {errors.isPublished && (
+                    <p className='text-red-500'>{errors.isPublished.message}</p>
+                )}
             </div>
 
             {submitError && <p className='text-red-500'>{submitError}</p>}

@@ -22,6 +22,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
     if (keyword.trim() !== '') {
         whereClause.OR = [{ title: { contains: keyword, mode: 'insensitive' } }]
     }
+    
+    whereClause.isPublished = true;
 
     const articles = await db.article.findMany({
         select: {

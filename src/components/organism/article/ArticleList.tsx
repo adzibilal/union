@@ -13,8 +13,10 @@ const ArticleList = () => {
     const [totalPages, setTotalPages] = useState(1)
     const [pageSize, setPageSize] = useState(6)
     const [keyword, setKeyword] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
 
     const getArticle = async () => {
+        setIsLoading(true)
         try {
             const response = await fetch(
                 `/api/articles?page=${currentPage}&pageSize=${pageSize}&keyword=${keyword}`,
@@ -31,6 +33,7 @@ const ArticleList = () => {
         } catch (error) {
             console.log(error)
         }
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -52,17 +55,19 @@ const ArticleList = () => {
 
     return (
         <div className='max-container !px-5'>
-            {articles && articles.length === 0 ? (
+            <input
+                type='text'
+                placeholder='Cari artikel...'
+                className='w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none mt-20'
+                onChange={e => handleChangeKeyword(e.target.value)}
+            />
+            
+            {isLoading ? (
                 <ArticleListSkeleton />
+            ) : articles && articles.length === 0 ? (
+                <div>Artikel Tidak ditemukan</div>
             ) : (
                 <>
-                    <input
-                        type='text'
-                        placeholder='Cari artikel...'
-                        className='w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none mt-20'
-                        onChange={e => handleChangeKeyword(e.target.value)}
-                    />
-
                     <div className='grid grid-cols-1 lg:grid-cols-2 gap-5 mb-20 mt-10'>
                         {articles.map(article => (
                             <ArticleItem key={article.id} article={article} />

@@ -1,9 +1,11 @@
 export interface ArticleTableType {
     id: string
     title: string
+    resume: string
     slug: string
     content: string
     image: string | null
+    isPublished: boolean
     ArticleCategory: {
         category: {
             id: string
@@ -24,9 +26,11 @@ export interface CategoryType {
 
 export interface ArticlePayload {
     title: string
+    resume: string
     slug: string
     content: string
     image: string | null
+    isPublished: boolean
     authorId: string
     categories: string[]
 }

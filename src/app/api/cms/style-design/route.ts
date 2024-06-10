@@ -26,7 +26,8 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const styleDesigns = await db.styleDesign.findMany({
         select: {
             id: true,
-            name: true
+            name: true,
+            description: true,
         },
         orderBy: {
             createdAt: 'desc'

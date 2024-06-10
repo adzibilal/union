@@ -14,6 +14,7 @@ export async function GET(
             select: {
                 id: true,
                 title: true,
+                resume: true,
                 slug: true,
                 content: true,
                 image: true,
@@ -33,6 +34,7 @@ export async function GET(
                         name: true
                     }
                 },
+                isPublished: true,
                 createdAt: true
             }
         })
@@ -115,9 +117,11 @@ export async function PATCH(
             where: { id: selectedArticle.id },
             data: {
                 title: values.title,
+                resume: values.resume,
                 slug: values.slug,
                 content: values.content,
                 image: values.image,
+                isPublished: values.isPublished,
                 authorId: values.authorId,
                 ArticleCategory: {
                     connectOrCreate: values.categories.map(categoryId => ({

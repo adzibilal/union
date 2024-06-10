@@ -73,7 +73,7 @@ const ArticleListItem: React.FC<ArticleListItemProps> = props => {
                         {props.article.title}
                     </div>
                     <div className='text-zinc-500 text-sm'>
-                        {props.article.slug}
+                        {props.article.resume}
                     </div>
                     <div className='flex items-center justify-between mt-3'>
                         <div className='text-zinc-500 text-xs'>
