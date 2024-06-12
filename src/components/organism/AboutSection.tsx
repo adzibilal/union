@@ -16,54 +16,30 @@ const AboutSection = () => {
                     />
 
                     <div className='text-md text-zinc-500 text-justify mb-2 leading-relaxed mt-4'>
-                        Sed ut perspiciatis unde omnis iste natus error sit
-                        voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et
-                        quasi architecto beatae vitae dicta sunt explicabo.
+                        Welcome to UNION CREATIVE DESIGN, your trusted partner
+                        in creating innovative and high-quality interior and
+                        construction solutions. Located in the heart of Bandung,
+                        West Java, with a branch office in Cimahi Selatan, we
+                        are committed to enhancing your business environment
+                        with professionalism and expertise.
                     </div>
-                    <div className='text-md text-zinc-500 text-justify mb-2 leading-relaxed'>
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-                        aut odit aut fugit, sed quia consequuntur magni dolores
-                        eos qui ratione voluptatem sequi nesciunt.
-                    </div>
-
                     <div className='grid grid-cols-2 gap-3 mt-8'>
                         {/* item checklist */}
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
+                            <div className='text-zinc-500'>Integrity</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
+                            <div className='text-zinc-500'>Respect</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
+                            <div className='text-zinc-500'>Honesty</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                        </div>
-                        <div className='flex items-center gap-3'>
-                            <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
-                        </div>
-                        <div className='flex items-center gap-3'>
-                            <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>
-                                Lorem ipsum dolor sit amet.
-                            </div>
+                            <div className='text-zinc-500'>Creativity</div>
                         </div>
                     </div>
 

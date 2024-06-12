@@ -1,4 +1,5 @@
 import AboutSection from '@/components/organism/AboutSection'
+import CTAWhatsApp from '@/components/organism/CTAWhatsApp'
 import OurTeam from '@/components/organism/OurTeam'
 import PageHeader from '@/components/organism/PageHeader'
 import React from 'react'
@@ -12,6 +13,7 @@ const AboutPage = () => {
             />
             <AboutSection />
             <OurTeam />
+            <CTAWhatsApp />
         </div>
     )
 }
