@@ -30,7 +30,7 @@ interface BreadcrumbProps {
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => (
     <nav aria-label='Breadcrumb'>
         <ol className='flex items-center gap-1 text-sm text-gray-600'>
-            <li>
+            <li key={'home'}>
                 <a href='#' className='block transition hover:text-gray-700'>
                     <span className='sr-only'> Home </span>
 
@@ -50,7 +50,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => (
                 </a>
             </li>
 
-            <li className='rtl:rotate-180'>
+            <li key={'ic'} className='rtl:rotate-180'>
                 <svg
                     xmlns='http://www.w3.org/2000/svg'
                     className='h-4 w-4'
@@ -71,7 +71,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => (
                         className={index > 0 ? 'rtl:rotate-180' : ''}
                     />
                     {index < items.length - 1 && (
-                        <li className='rtl:rotate-180'>
+                        <li key={`ic-${index}`} className='rtl:rotate-180'>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 className='h-4 w-4'
