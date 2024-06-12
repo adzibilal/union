@@ -1,34 +1,34 @@
 'use client'
 import Breadcrumb from '@/components/molecules/admin/Breadcrumb'
-import FormArticle from '@/components/organism/admin/article/FormArticle'
+import FormPortofolio from '@/components/organism/admin/portofolio/FormPortofolio'
 import { getSession } from '@/lib'
-import { ArticleTableType } from '@/types/admin/articles/type'
+import { PortofolioTableType } from '@/types/admin/portofolio/type'
 import { redirect, useParams } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
-const EditArticlePage = () => {
+const EditPortofolioPage = () => {
     const { slug } = useParams<{ slug: string }>()
-    const [article, setArticle] = useState<ArticleTableType | null>(null)
+    const [portofolio, setPortofolio] = useState<PortofolioTableType | null>(null)
 
-    const getArticle = async () => {
+    const getPortofolio = async () => {
         try {
-            const response = await fetch(`/api/cms/articles/${slug}`)
+            const response = await fetch(`/api/cms/portofolio/${slug}`)
             const data = await response.json()
-            setArticle(data)
+            setPortofolio(data)
         } catch (error) {
-            console.error('[GET ARTICLE BY ID]', error)
+            console.error('[GET PORTOFOLIO BY ID]', error)
         }
     }
 
     useEffect(() => {
-        getArticle()
+        getPortofolio()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const items = [
         { href: '/admin/dashboard', children: 'Dashboard' },
-        { href: '/admin/article', children: 'Articles' },
-        { children: 'Edit Article' }
+        { href: '/admin/portofolio', children: 'Portofolios' },
+        { children: 'Edit Portofolio' }
     ]
     return (
         <div className='p-5 w-full bg-zinc-50'>
@@ -38,12 +38,12 @@ const EditArticlePage = () => {
 
             <div className='bg-white shadow-sm border rounded-md w-full p-6 max-w-screen-md mx-auto'>
                 <div className='text-zinc-900 text-3xl font-semibold'>
-                    Edit Article
+                    Edit Portofolio
                 </div>
-                {article && <FormArticle article={article} />}
+                {portofolio && <FormPortofolio portofolio={portofolio} />}
             </div>
         </div>
     )
 }
 
-export default EditArticlePage
+export default EditPortofolioPage

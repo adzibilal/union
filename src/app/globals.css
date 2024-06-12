@@ -19,6 +19,7 @@
 .input-group input[type='text'],
 .input-group input[type='email'],
 .input-group input[type='password'],
+.input-group input[type='number'],
 .input-group textarea,
 .input-group select {
     @apply px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none;
