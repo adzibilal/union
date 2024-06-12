@@ -1,12 +1,13 @@
 'use client'
 
 import { PortofolioTableType } from '@/types/admin/portofolio/type'
-import { diffForHumans } from '@/utils'
+import { diffForHumans, rupiahFormat } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { FaEdit, FaImage, FaTrash } from 'react-icons/fa'
+import { FaEdit, FaImage, FaMoneyBill, FaTrash, FaUser } from 'react-icons/fa'
 import LoadingSpinner from '../../LoadingSpinner'
+import { FaLocationPin } from 'react-icons/fa6'
 
 interface PortofolioListItemProps {
     portofolio: PortofolioTableType
@@ -16,7 +17,9 @@ interface PortofolioListItemProps {
 const PortofolioListItem: React.FC<PortofolioListItemProps> = props => {
     const [isLoading, setIsLoading] = React.useState(false)
     const handleDeletePortofolio = async () => {
-        const conf = confirm('Apakah anda yakin ingin menghapus portofolio ini?')
+        const conf = confirm(
+            'Apakah anda yakin ingin menghapus portofolio ini?'
+        )
         if (!conf) return
         setIsLoading(true)
         try {
@@ -61,19 +64,62 @@ const PortofolioListItem: React.FC<PortofolioListItemProps> = props => {
 
                 <div className='w-full'>
                     <div className='flex gap-3 items-center mb-2'>
-                        {/* {props.portofolio.PortofolioCategory.map((item, index) => (
+                        {props.portofolio.PortofolioStyle.map((item, index) => (
                             <div
                                 key={index}
                                 className='bg-orange-100 text-orange-500 font-semibold text-xs px-2 py-1 rounded-md'>
-                                {item.category.name}
+                                {item.style.name}
                             </div>
-                        ))} */}
+                        ))}
                     </div>
                     <div className='text-zinc-900 text-lg font-semibold'>
                         {props.portofolio.title}
                     </div>
                     <div className='text-zinc-500 text-sm'>
                         {props.portofolio.resume}
+                    </div>
+
+                    <div className='grid grid-cols-2 gap-2 mt-5'>
+                        <div className=''>
+                            <div className='uppercase text-xs'>Build Price</div>
+                            <div className='flex items-center gap-2'>
+                                <FaMoneyBill className='text-zinc-500' />
+                                <div className='text-zinc-500'>
+                                    {rupiahFormat(props.portofolio.buildPrice)}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=''>
+                            <div className='uppercase text-xs'>
+                                Design Price
+                            </div>
+                            <div className='flex items-center gap-2'>
+                                <FaMoneyBill className='text-zinc-500' />
+                                <div className='text-zinc-500'>
+                                    {rupiahFormat(props.portofolio.designPrice)}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className=''>
+                            <div className='uppercase text-xs'>Client</div>
+                            <div className='flex items-center gap-2'>
+                                <FaUser className='text-zinc-500' />
+                                <div className='text-zinc-500'>
+                                    {props.portofolio.client}
+                                </div>
+                            </div>
+                        </div>
+                        <div className=''>
+                            <div className='uppercase text-xs'>Location</div>
+                            <div className='flex items-center gap-2'>
+                                <FaLocationPin className='text-zinc-500' />
+                                <div className='text-zinc-500'>
+                                    {props.portofolio.location}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div className='flex items-center justify-between mt-3'>
                         <div className='text-zinc-500 text-xs'>

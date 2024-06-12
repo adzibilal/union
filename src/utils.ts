@@ -29,3 +29,11 @@ export function diffForHumans(inpdate: string): string {
 export function removeTagHTML(str: string): string {
     return str.replace(/(<([^>]+)>)/gi, '')
 }
+
+// rupiah format
+export function rupiahFormat(price: number): string {
+    return new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR'
+    }).format(price)
+}
