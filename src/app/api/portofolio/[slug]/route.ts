@@ -1,5 +1,5 @@
 import { db } from '@/db'
-import { ArticlePayload } from '@/types/admin/articles/type'
+import { PortofolioPayload } from '@/types/admin/portofolio/type'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(
@@ -9,17 +9,26 @@ export async function GET(
     try {
         const { slug } = params
 
-        const article = await db.article.findUnique({
+        const portofolio = await db.portofolio.findUnique({
             where: { slug: slug },
             select: {
                 id: true,
                 title: true,
+                resume: true,
                 slug: true,
                 content: true,
                 image: true,
-                ArticleCategory: {
+                buildPrice: true,
+                client: true,
+                designPrice: true,
+                isPublished: true,
+                location: true,
+                material: true,
+                projectType: true,
+                size: true,
+                PortofolioStyle: {
                     select: {
-                        category: {
+                        style: {
                             select: {
                                 id: true,
                                 name: true
@@ -37,17 +46,20 @@ export async function GET(
             }
         })
 
-        if (!article) {
-            return new NextResponse('article not found', {
+        if (!portofolio) {
+            return new NextResponse('portofolio not found', {
                 status: 404
             })
         }
 
-        return NextResponse.json(article)
+        return NextResponse.json(portofolio)
     } catch (error) {
-        console.error('[GET article BY SLUG]', error)
-        return new NextResponse(`GET article BY SLUG ${error ? error : ''}`, {
-            status: 500
-        })
+        console.error('[GET portofolio BY SLUG]', error)
+        return new NextResponse(
+            `GET portofolio BY SLUG ${error ? error : ''}`,
+            {
+                status: 500
+            }
+        )
     }
 }

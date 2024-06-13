@@ -39,7 +39,7 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
                 </Link>
 
                 <p className='text-gray-500 line-clamp-3 text-ellipsis overflow-hidden mt-2 text-sm '>
-                    {removeTagHTML(article.content)}
+                    {article.resume}
                 </p>
 
                 <div className='flex justify-between items-center text-sm text-zinc-700 mt-5'>
