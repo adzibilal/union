@@ -7,20 +7,15 @@ import {
     FaLinkedinIn,
     FaTwitter
 } from 'react-icons/fa'
+import SliderLogoFooter from '../molecules/SliderLogoFooter'
 
 const Footer = () => {
     return (
         <div className='bg-zinc-900 mt-36'>
             <div className='max-container pt-6'>
                 <div className='bg-u-orange-500 p-6 -mt-20'>
-                    <div className='bg-zinc-200 -mt-16 flex justify-around items-center py-5 max-sm:hidden'>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
-                        <div className='bg-zinc-400 py-6 px-8'>LOGO</div>
+                    <div className='bg-zinc-200 -mt-16 flex justify-around items-center py-5 max-sm:hidden px-5'>
+                        <SliderLogoFooter />
                     </div>
                     <div className='text-white font-extrabold uppercase text-5xl my-5'>
                         LETS CHANGE YOUR OWN HOME INTERIOR DESIGN NOW
