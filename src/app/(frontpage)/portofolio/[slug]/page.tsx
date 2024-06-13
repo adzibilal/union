@@ -102,7 +102,7 @@ const PortofolioDetailPage = () => {
                         </div>
 
                         <div className='bg-zinc-50 p-3'>
-                            <div className='flex items-center gap-7 justify-center'>
+                            <div className='flex items-center gap-7 justify-center flex-wrap max-md:justify-start'>
                                 <div className=''>
                                     <div className='flex items-center gap-1 text-xs text-zinc-600 mb-1'>
                                         <FaMoneyBill />
@@ -172,8 +172,7 @@ const PortofolioDetailPage = () => {
                                         {portofolio.location || 'Not Set'}
                                     </div>
                                 </div>
-                            </div>
-                            <div className='flex items-center gap-7 justify-center mt-5'>
+
                                 <div className=''>
                                     <div className='flex items-center gap-1 text-xs text-zinc-600 mb-1'>
                                         <BiBox />
