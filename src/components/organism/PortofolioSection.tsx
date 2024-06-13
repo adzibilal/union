@@ -1,5 +1,6 @@
 import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
+import Image from 'next/image'
 
 const PortofolioSection = () => {
     return (
@@ -22,9 +23,13 @@ const PortofolioSection = () => {
                     </div>
                 </div>
                 <div className=''>
-                    <div className='bg-zinc-100 aspect-[4/5] w-full'>
-                        {/* image place holder */}
-                    </div>
+                    <Image
+                        src='/assets/images/porto/2.png'
+                        alt='about'
+                        width={500}
+                        height={600}
+                        className='aspect-[4/5] w-full object-cover'
+                    />
                 </div>
             </div>
         </div>

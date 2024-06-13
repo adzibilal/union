@@ -30,7 +30,7 @@ export default async function RootLayout({
             <body className={poppins.className}>
                 <NextIntlClientProvider messages={messages}>
                     {children}
-                    <NextTopLoader showAtBottom color='#FE7C04' />
+                    <NextTopLoader color='#FE7C04' />
                     <Toaster/>
                 </NextIntlClientProvider>
             </body>

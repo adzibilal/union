@@ -8,52 +8,52 @@ const OurTeam = () => {
         {
             name: 'Heli Kusmayadi, ST',
             role: 'Direktur',
-            image: '/images/team-heli.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Irwansyah',
             role: 'Wakil Direktur',
-            image: '/images/team-irwansyah.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Marasal Haloho',
             role: 'Manajer Pemasaran',
-            image: '/images/team-marasal.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Irpan',
             role: 'Manajer Proyek',
-            image: '/images/team-irpan.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Rizki',
             role: 'Desain Grafis',
-            image: '/images/team-rizki.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Endang Slihanda, ST',
             role: 'Arsitek',
-            image: '/images/team-endang.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Dadang',
             role: 'Supervisor',
-            image: '/images/team-dadang.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Azwar Efendi',
             role: 'Logistik',
-            image: '/images/team-azwar.jpg'
+            image: '/assets/images/team/2.webp'
         },
         {
             name: 'Fitri Nur Ilah',
             role: 'Manajer ADM/Keuangan',
-            image: '/images/team-fitri.jpg'
+            image: '/assets/images/team/19.webp'
         },
         {
             name: 'Farid Fadillah',
             role: 'Manajer ADM/Keuangan',
-            image: '/images/team-farid.jpg'
+            image: '/assets/images/team/2.webp'
         }
     ]
 

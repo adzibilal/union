@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 
@@ -10,18 +11,22 @@ interface TeamItemProps {
 
 const TeamItem: React.FC<TeamItemProps> = ({ index, name, image, role }) => {
     const isGanjil = index % 2 === 0
-    
+
     return (
         <div className='flex flex-col items-center'>
-            {/* <Image
-                            src={item.image}
-                            alt={item.name}
-                            width={400}
-                            height={400}
-                            className='aspect-[4/5] object-cover'
-                        /> */}
-            <div className='aspect-[4/5] bg-zinc-100 w-full'></div>
-            <div className={`border border-t-0 w-full p-5 text-center ${isGanjil ? 'border-zinc-200' : 'border-gray-950 bg-zinc-950 text-white'} `}>
+            <Image
+                src={image}
+                alt={name}
+                width={400}
+                height={400}
+                className='aspect-[4/5] w-full object-cover'
+            />
+            <div
+                className={`border border-t-0 w-full p-5 text-center ${
+                    isGanjil
+                        ? 'border-zinc-200'
+                        : 'border-gray-950 bg-zinc-950 text-white'
+                } `}>
                 <p className='text-lg font-light uppercase'>{role}</p>
                 <h3 className='font-extrabold text-2xl uppercase'>{name}</h3>
 

@@ -1,14 +1,19 @@
 import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
 import { FaCheckCircle } from 'react-icons/fa'
+import Image from 'next/image'
 
 const AboutSection = () => {
     return (
         <div className='max-container py-32'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
-                <div className='bg-zinc-100 aspect-[4/5] w-full'>
-                    {/* image place holder */}
-                </div>
+                <Image
+                    src='/assets/images/porto/1.png'
+                    alt='about'
+                    width={500}
+                    height={600}
+                    className='aspect-[4/5] w-full object-cover'
+                />
                 <div className=''>
                     <SectionTitle
                         subTitle='WHO WE ARE'

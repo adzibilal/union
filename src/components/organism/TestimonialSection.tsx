@@ -52,7 +52,7 @@ const TestimonialSection = () => {
     ]
 
     return (
-        <div className='max-container'>
+        <div className='max-container !mt-32 !mb-52'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
                 <div className=''>
                     <SectionTitle
