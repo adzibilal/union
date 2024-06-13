@@ -25,15 +25,19 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='grid grid-cols-[2fr_1fr_1fr] max-sm:grid-cols-1 max-sm:gap-10 pt-16 pb-8'>
+                <div className='grid grid-cols-[2fr_1fr_1fr] max-sm:grid-cols-1 gap-10 pt-16 pb-8'>
                     <div className='flex flex-col gap-3'>
                         <div className='text-lg font-extrabold uppercase text-white'>
-                            Information
+                            Make a Better with Experience
                         </div>
-                        <div className='text-zinc-200'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Ut elit tellus, luctus nec ullamcorper mattis,
-                            pulvinar dapibus leo.
+                        <div className='text-zinc-200 text-xs'>
+                            Welcome to UNION CREATIVE DESIGN, your trusted
+                            partner in creating innovative and high-quality
+                            interior and construction solutions. Located in the
+                            heart of Bandung, West Java, with a branch office in
+                            Cimahi Selatan, we are committed to enhancing your
+                            business environment with professionalism and
+                            expertise.
                         </div>
                         <div className='flex gap-3'>
                             <Link href='/'>
@@ -97,18 +101,29 @@ const Footer = () => {
                         <div className='text-lg font-extrabold uppercase text-white'>
                             CONTACT US
                         </div>
+                        {/* button chat wa */}
+                        <Link
+                            href={`
+                            https://wa.me/6281234567890?text=Halo%20Union%20Creative%20Design%2C%20saya%20ingin%20bertanya%20tentang%20produk%20dan%20layanan%20yang%20anda%20tawarkan
+                            `}
+                            target='_blank'
+                            className='bg-u-orange-500 text-white px-6 py-3 w-max hover:bg-u-orange-300 cursor-pointer'>
+                            WhatsApp Sekarang
+                        </Link>
                     </div>
                 </div>
 
-                <div className="flex justify-between items-center uppercase text-white font-semibold border-t-2 border-zinc-700 pt-5 pb-10 max-sm:flex-col">
-                    <div className="max-sm:text-center max-sm:mb-5">Allright Reserved - UNION CREATIVE DESIGN &copy; 2024</div>
+                <div className='flex justify-between items-center uppercase text-white font-semibold border-t-2 border-zinc-700 pt-5 pb-10 max-sm:flex-col'>
+                    <div className='max-sm:text-center max-sm:mb-5'>
+                        Allright Reserved - UNION CREATIVE DESIGN &copy; 2024
+                    </div>
 
-                    <div className="flex gap-10 max-sm:text-xs">
-                        <Link href="/">
-                            <div className="text-white">Privacy Policy</div>
+                    <div className='flex gap-10 max-sm:text-xs'>
+                        <Link href='/'>
+                            <div className='text-white'>Privacy Policy</div>
                         </Link>
-                        <Link href="/">
-                            <div className="text-white">Term Of Use</div>
+                        <Link href='/'>
+                            <div className='text-white'>Term Of Use</div>
                         </Link>
                     </div>
                 </div>
