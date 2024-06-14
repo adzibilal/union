@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .max-container {
-    @apply px-6 xl:px-0;
+    @apply px-6;
     max-width: 1440px;
     margin: 0 auto;
 }
