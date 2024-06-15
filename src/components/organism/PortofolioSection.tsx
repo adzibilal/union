@@ -1,6 +1,7 @@
 import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const PortofolioSection = () => {
     return (
@@ -9,17 +10,18 @@ const PortofolioSection = () => {
                 <div className=''>
                     <SectionTitle
                         subTitle='Perfect Partner'
-                        title='WE HAVE PRIORITY FOR CAN CREATE DREAM HOME DESIGN'
+                        title='Kepuasan Anda Adalah Prioritas Bagi Kami'
                     />
                     <div className='text-zinc-600 mt-6'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quasi, quod voluptatem. Quisquam, voluptate. Quisquam,
-                        voluptate.
+                        Kami berkomitmen untuk memberikan pelayanan terbaik dan
+                        hasil yang memuaskan. Setiap proyek kami kerjakan dengan
+                        sepenuh hati, karena kebahagiaan Anda adalah kebanggaan
+                        kami.
                     </div>
                     <div className='mt-6'>
-                        <button className='bg-u-orange-500 text-white px-6 py-3 uppercase'>
-                            PORTOFOLIO
-                        </button>
+                        <Link href={`/portofolio`} className='bg-u-orange-500 text-white px-6 py-3 uppercase'>
+                            PORTOFOLIO KAMI
+                        </Link>
                     </div>
                 </div>
                 <div className=''>

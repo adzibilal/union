@@ -16,35 +16,32 @@ const AboutSection = () => {
                 />
                 <div className=''>
                     <SectionTitle
-                        subTitle='WHO WE ARE'
-                        title='WE ARE PERFECT TEAM FOR HOME INTERIOR DECORATION'
+                        subTitle='Selamat Datang di'
+                        title='UNION CREATIVE DESIGN'
                     />
 
                     <div className='text-md text-zinc-500 text-justify mb-2 leading-relaxed mt-4'>
-                        Welcome to UNION CREATIVE DESIGN, your trusted partner
-                        in creating innovative and high-quality interior and
-                        construction solutions. Located in the heart of Bandung,
-                        West Java, with a branch office in Cimahi Selatan, we
-                        are committed to enhancing your business environment
-                        with professionalism and expertise.
+                        Kami hadir untuk mewujudkan hunian impian Anda menjadi
+                        kenyataan. Dengan pengalaman lebih dari 10 tahun, kami
+                        adalah solusi terdepan untuk desain hunian terbaik.
                     </div>
-                    <div className='grid grid-cols-2 gap-3 mt-8'>
+                    <div className='grid grid-cols-1 gap-3 mt-8'>
                         {/* item checklist */}
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Integrity</div>
+                            <div className='text-zinc-500'>Furnitur Custom Berteknologi Tinggi</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Respect</div>
+                            <div className='text-zinc-500'>Desain Arsitektur & Interior yang Profesional</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Honesty</div>
+                            <div className='text-zinc-500'>Konstruksi & Renovasi Berkualitas</div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Creativity</div>
+                            <div className='text-zinc-500'>Ahli Dekorasi dengan Sentuhan Estetika</div>
                         </div>
                     </div>
 
@@ -52,7 +49,7 @@ const AboutSection = () => {
                     <div className='grid grid-cols-3 gap-3 mt-10'>
                         <div className='flex flex-col items-center justify-center gap-3'>
                             <div className='text-u-orange-500 text-5xl font-extrabold'>
-                                15 Y
+                                10 Y+
                             </div>
                             <div className='uppercase text-zinc-600'>
                                 Experience

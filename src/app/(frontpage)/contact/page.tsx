@@ -1,6 +1,7 @@
 'use client'
 import PageHeader from '@/components/organism/PageHeader'
 import React from 'react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 const ContactPage = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -57,7 +58,8 @@ const ContactPage = () => {
                             className='w-full px-3 py-2 border border-zinc-300 focus:outline-none h-[300px]'></textarea>
                         <button
                             type='submit'
-                            className='w-full bg-zinc-500 text-white py-2 hover:bg-zinc-600 transition duration-200'>
+                            className='w-full bg-green-500 text-white py-2 hover:bg-green-600 transition duration-200 flex gap-3 items-center justify-center'>
+                            <FaWhatsapp />
                             WhatsApp Now
                         </button>
                     </div>
