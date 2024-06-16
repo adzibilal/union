@@ -13,5 +13,13 @@
         "calculator": "Kalkulator Biaya",
         "contact": "Kontak",
         "faq": "FAQ"
+    },
+    "FAQ": {
+        "trending-questions": "Pertanyaan Trending",
+        "trending-title": "Pertanyaan dan Jawaban Trending Minggu Ini",
+        "trending-desc": "Setiap minggu, kami menyajikan pertanyaan-pertanyaan yang paling banyak dicari dan dibahas oleh pengguna. Pertanyaan trending minggu ini mencakup topik-topik menarik seperti inovasi teknologi terbaru, tips produktivitas, dan tren kesehatan. Jelajahi jawaban dari para ahli dan dapatkan wawasan yang bermanfaat untuk menambah pengetahuan Anda.",
+        "freq-questions": "Pertanyaan yang Sering Ditanyakan",
+        "freq-title": "Pertanyaan yang Biasanya Ditanyakan oleh Klien",
+        "freq-desc": "Kami sering menerima pertanyaan dari klien mengenai berbagai topik penting. Pertanyaan yang paling sering diajukan meliputi cara penggunaan layanan kami, proses pengiriman, dan kebijakan pengembalian. Kami selalu berusaha memberikan jawaban yang jelas dan informatif untuk membantu klien memahami layanan kami dengan lebih baik."
     }
 }

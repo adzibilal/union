@@ -2,7 +2,7 @@
     "Index": {
         "title": "Hello world!"
     },
-    "Navbar" : {
+    "Navbar": {
         "home": "Home",
         "about": "About Us",
         "services": "Our Services",
@@ -13,5 +13,13 @@
         "calculator": "Price Calculator",
         "contact": "Contact",
         "faq": "FAQ"
+    },
+    "FAQ": {
+        "trending-questions": "Trending Questions",
+        "trending-title": "Weekly Trending Questions and Answers",
+        "trending-desc": "Every week, we present the most searched and discussed questions by users. This week's trending questions cover interesting topics such as the latest technology innovations, productivity tips, and health trends. Explore answers from experts and gain valuable insights to enhance your knowledge.",
+        "freq-questions": "Frequently Asked Questions",
+        "freq-title": "Common Questions Asked by Clients",
+        "freq-desc": "We often receive questions from clients about various important topics. The most frequently asked questions include how to use our services, the shipping process, and return policies. We always strive to provide clear and informative answers to help clients better understand our services."
     }
 }
