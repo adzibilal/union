@@ -20,8 +20,8 @@ const StyleQuiz = () => {
     return (
         <div className='max-md:pt-5 max-md:pb-10'>
             {currentStep === 0 ? (
-                <div className='flex flex-col items-center justify-center gap-2 h-full max-md:py-10'>
-                    <div className='text-2xl font-bold'>
+                <div className='flex flex-col items-center justify-center gap-2 h-full max-md:py-10 max-md:text-center'>
+                    <div className='text-2xl font-bold max-sm:text-xl'>
                         Apa gaya desain interior saya?
                     </div>
                     <div className='text-sm text-zinc-600'>
