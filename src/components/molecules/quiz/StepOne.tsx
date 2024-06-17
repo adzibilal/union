@@ -26,10 +26,13 @@ const StepOne: React.FC<StepOneProps> = ({
     onNext,
     onPrev
 }) => {
-    const [selected, setSelected] = useState<number>()
+    const [selected, setSelected] = useState<number | null>(
+        selectedStyle || null
+    )
 
     const handleStyleClick = (styleId: number) => {
         setSelected(styleId)
+        setSelectedStyle(styleId)
     }
 
     return (
@@ -37,7 +40,7 @@ const StepOne: React.FC<StepOneProps> = ({
             <div className='text-2xl font-bold mb-3'>
                 Gaya interior apa yang paling Anda sukai?
             </div>
-            <div className='grid grid-cols-2 gap-3'>
+            <div className='grid grid-cols-2 gap-3 max-md:grid-cols-1'>
                 {styles.map(style => (
                     <div
                         key={style.id}
@@ -65,13 +68,14 @@ const StepOne: React.FC<StepOneProps> = ({
             </div>
 
             <div className='flex gap-3'>
-                <div
+                <button
+                    disabled={!selected}
                     onClick={() => {
                         onNext()
                     }}
-                    className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
+                    className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
                     SELANJUTNYA
-                </div>
+                </button>
             </div>
         </div>
     )

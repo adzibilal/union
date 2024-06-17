@@ -5,14 +5,22 @@ import StepTwo from '../molecules/quiz/StepTwo'
 import StepThree from '../molecules/quiz/StepThree'
 import StepFour from '../molecules/quiz/StepFour'
 import StepFive from '../molecules/quiz/StepFive'
+import ResultQuiz from './ResultQuiz'
 
 const StyleQuiz = () => {
     const [currentStep, setCurrentStep] = React.useState(0)
+    const [answers, setAnswers] = React.useState<(number | null)[]>([
+        null,
+        null,
+        null,
+        null,
+        null
+    ])
 
     return (
-        <div className=''>
+        <div className='max-md:pt-5 max-md:pb-10'>
             {currentStep === 0 ? (
-                <div className='flex flex-col items-center justify-center gap-2 h-full'>
+                <div className='flex flex-col items-center justify-center gap-2 h-full max-md:py-10'>
                     <div className='text-2xl font-bold'>
                         Apa gaya desain interior saya?
                     </div>
@@ -26,41 +34,51 @@ const StyleQuiz = () => {
                     </div>
                 </div>
             ) : currentStep === 1 ? (
-                <StepOne 
-                    selectedStyle={1}
-                    setSelectedStyle={() => {}}
+                <StepOne
+                    selectedStyle={answers[0] as number}
+                    setSelectedStyle={(id) => {
+                        setAnswers([id, answers[1], answers[2], answers[3], answers[4]])
+                    }}
                     onNext={() => setCurrentStep(2)}
                 />
             ) : currentStep === 2 ? (
-                <StepTwo 
-                    selectedStyle={1}
-                    setSelectedStyle={() => {}}
+                <StepTwo
+                    selectedStyle={answers[1] as number}
+                    setSelectedStyle={(id) => {
+                        setAnswers([answers[0], id, answers[2], answers[3], answers[4]])
+                    }}
                     onNext={() => setCurrentStep(3)}
                     onPrev={() => setCurrentStep(1)}
                 />
             ) : currentStep === 3 ? (
                 <StepThree
-                    selectedStyle={1}
-                    setSelectedStyle={() => {}}
+                    selectedStyle={answers[2] as number}
+                    setSelectedStyle={(id) => {
+                        setAnswers([answers[0], answers[1], id, answers[3], answers[4]])
+                    }}
                     onNext={() => setCurrentStep(4)}
                     onPrev={() => setCurrentStep(2)}
                 />
             ) : currentStep === 4 ? (
-                <StepFour 
-                    selectedStyle={1}
-                    setSelectedStyle={() => {}}
+                <StepFour
+                    selectedStyle={answers[3] as number}
+                    setSelectedStyle={(id) => {
+                        setAnswers([answers[0], answers[1], answers[2], id, answers[4]])
+                    }}
                     onNext={() => setCurrentStep(5)}
                     onPrev={() => setCurrentStep(3)}
                 />
             ) : currentStep === 5 ? (
-                <StepFive 
-                    selectedStyle={1}
-                    setSelectedStyle={() => {}}
+                <StepFive
+                    selectedStyle={answers[4] as number}
+                    setSelectedStyle={(id) => {
+                        setAnswers([answers[0], answers[1], answers[2], answers[3], id])
+                    }}
                     onNext={() => setCurrentStep(6)}
                     onPrev={() => setCurrentStep(4)}
                 />
             ) : (
-                <div>Result</div>
+                <ResultQuiz answers={answers} />
             )}
         </div>
     )

@@ -34,18 +34,22 @@ const StepThree: React.FC<StepThreeProps> = ({
     onNext,
     onPrev
 }) => {
-    const [selected, setSelected] = useState<number>()
+    const [selected, setSelected] = useState<number | null>(
+        selectedStyle || null
+    )
 
     const handleStyleClick = (styleId: number) => {
         setSelected(styleId)
+        setSelectedStyle(styleId)
     }
+
 
     return (
         <div className='px-5 py-3'>
             <div className='text-2xl font-bold mb-3'>
                 Furnitur seperti apa yang paling menarik bagi Anda?
             </div>
-            <div className='grid grid-cols-2 gap-3'>
+            <div className='grid grid-cols-2 gap-3 max-md:grid-cols-1'>
                 {styles.map(style => (
                     <div
                         key={style.id}
@@ -77,13 +81,14 @@ const StepThree: React.FC<StepThreeProps> = ({
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
                     SEBELUMNYA
                 </div>
-                <div
+                <button
+                    disabled={!selected}
                     onClick={() => {
                         onNext()
                     }}
-                    className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
+                    className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
                     SELANJUTNYA
-                </div>
+                </button>
             </div>
         </div>
     )
