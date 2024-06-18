@@ -20,7 +20,53 @@
         "trending-desc": "Every week, we present the most searched and discussed questions by users. This week's trending questions cover interesting topics such as the latest technology innovations, productivity tips, and health trends. Explore answers from experts and gain valuable insights to enhance your knowledge.",
         "freq-questions": "Frequently Asked Questions",
         "freq-title": "Common Questions Asked by Clients",
-        "freq-desc": "We often receive questions from clients about various important topics. The most frequently asked questions include how to use our services, the shipping process, and return policies. We always strive to provide clear and informative answers to help clients better understand our services."
+        "freq-desc": "We often receive questions from clients about various important topics. The most frequently asked questions include how to use our services, the shipping process, and return policies. We always strive to provide clear and informative answers to help clients better understand our services.",
+        "questions": {
+            "trendingFaq": [
+                {
+                    "question": "What makes UNION CREATIVE DESIGN different from other companies in the same field?",
+                    "answer": "UNION CREATIVE DESIGN prioritizes principles of GOOD CORPORATE GOVERNANCE, integrity, creativity, and excellent service. With high-quality human resources and cutting-edge technology, we always strive to provide the best solutions for our clients."
+                },
+                {
+                    "question": "How is the consultation process for interior design projects conducted?",
+                    "answer": "The consultation process begins with understanding the client’s needs and preferences. Our team then develops ideas and creative solutions tailored to the client’s desires, followed by detailed planning and project execution."
+                },
+                {
+                    "question": "What services does UNION CREATIVE DESIGN offer in the field of promotion/advertising?",
+                    "answer": "We offer promotion services both outdoor such as neon boxes, billboards, neon signs, and indoor through radio, television, mass media, and exhibitions."
+                },
+                {
+                    "question": "Does UNION CREATIVE DESIGN also provide electrical installation services?",
+                    "answer": "Yes, we provide electrical installation services for offices and homes, including electrical consultations."
+                },
+                {
+                    "question": "How to contact UNION CREATIVE DESIGN to start a project?",
+                    "answer": "You can contact our contact persons: Helik at +62 813 8704 S066, Irpan at +62 857 0951 a6!, or Irwansyah at +62 811 885 8059. We will be ready to assist you in starting your project."
+                }
+            ],
+            "freqFaq": [
+                {
+                    "question": "How does UNION CREATIVE DESIGN ensure the quality of their work?",
+                    "answer": "We ensure quality through good management, competent human resources, and the use of the latest technology in every project. We also always strive to meet industry standards that are high-quality and recognized."
+                },
+                {
+                    "question": "What services does UNION CREATIVE DESIGN provide in the field of furniture?",
+                    "answer": "We provide partition making services, drop ceiling, booths, displays, as well as office and home furniture such as chairs, sofas, tables, and cabinets. We also offer layout and interior design services."
+                },
+                {
+                    "question": "Does UNION CREATIVE DESIGN also supply materials for exterior projects?",
+                    "answer": "Yes, we are a supplier of materials for interiors, exteriors, promotion/advertising, mechanical, and electrical projects."
+                },
+                {
+                    "question": "How does UNION CREATIVE DESIGN handle projects with tight deadlines?",
+                    "answer": "With experience and expert human resources, we always prioritize time and cost efficiency in every project. We use cutting-edge technology to ensure all projects are completed on time and within budget."
+                },
+                {
+                    "question": "Does UNION CREATIVE DESIGN only serve large companies or also individuals?",
+                    "answer": "We serve various clients, both large companies, institutions, and individuals. We are ready to provide the best services according to our clients’ needs."
+                }
+            ]
+        }
     },
     "AboutSection": {
         "welcome": "Welcome to",
@@ -272,5 +318,22 @@
                 "budget": "Budget"
             }
         }
+    },
+    "Footer": {
+        "cta-text": "LETS CHANGE YOUR OWN HOME INTERIOR DESIGN NOW",
+        "cta-button": "CONTACT US",
+        "intro-title": "Make a Better with Experience",
+        "intro-desc": "Welcome to UNION CREATIVE DESIGN, your trusted partner in creating innovative and high-quality interior and construction solutions. Located in the heart of Bandung, West Java, with a branch office in Cimahi Selatan, we are committed to enhancing your business environment with professionalism and expertise.",
+        "navigation-title": "NAVIGATION",
+        "nav-home": "Home",
+        "nav-about": "About",
+        "nav-services": "Services",
+        "nav-projects": "Projects",
+        "contact-title": "CONTACT US",
+        "contact-button": "WhatsApp Sekarang",
+        "contact-link": "https://wa.me/6281234567890?text=Halo%20Union%20Creative%20Design%2C%20saya%20ingin%20bertanya%20tentang%20produk%20dan%20layanan%20yang%20anda%20tawarkan",
+        "footer-note": "Allright Reserved - UNION CREATIVE DESIGN © 2024",
+        "privacy-policy": "Privacy Policy",
+        "terms-of-use": "Term Of Use"
     }
 }

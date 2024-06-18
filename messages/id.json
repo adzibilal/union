@@ -20,7 +20,53 @@
         "trending-desc": "Setiap minggu, kami menyajikan pertanyaan-pertanyaan yang paling banyak dicari dan dibahas oleh pengguna. Pertanyaan trending minggu ini mencakup topik-topik menarik seperti inovasi teknologi terbaru, tips produktivitas, dan tren kesehatan. Jelajahi jawaban dari para ahli dan dapatkan wawasan yang bermanfaat untuk menambah pengetahuan Anda.",
         "freq-questions": "Pertanyaan yang Sering Ditanyakan",
         "freq-title": "Pertanyaan yang Biasanya Ditanyakan oleh Klien",
-        "freq-desc": "Kami sering menerima pertanyaan dari klien mengenai berbagai topik penting. Pertanyaan yang paling sering diajukan meliputi cara penggunaan layanan kami, proses pengiriman, dan kebijakan pengembalian. Kami selalu berusaha memberikan jawaban yang jelas dan informatif untuk membantu klien memahami layanan kami dengan lebih baik."
+        "freq-desc": "Kami sering menerima pertanyaan dari klien mengenai berbagai topik penting. Pertanyaan yang paling sering diajukan meliputi cara penggunaan layanan kami, proses pengiriman, dan kebijakan pengembalian. Kami selalu berusaha memberikan jawaban yang jelas dan informatif untuk membantu klien memahami layanan kami dengan lebih baik.",
+        "questions": {
+            "trendingFaq": [
+                {
+                    "question": "Apa yang membuat UNION CREATIVE DESIGN berbeda dari perusahaan lain di bidang yang sama?",
+                    "answer": "UNION CREATIVE DESIGN mengutamakan prinsip GOOD CORPORATE GOVERNANCE, integritas, kreativitas, dan pelayanan prima. Dengan SDM yang berkualitas dan teknologi mutakhir, kami selalu berusaha memberikan solusi terbaik untuk klien kami."
+                },
+                {
+                    "question": "Bagaimana proses konsultasi untuk proyek desain interior dilakukan?",
+                    "answer": "Proses konsultasi dimulai dengan memahami kebutuhan dan preferensi klien. Tim kami kemudian akan mengembangkan ide dan solusi kreatif yang disesuaikan dengan keinginan klien, diikuti dengan perencanaan detail dan pelaksanaan proyek."
+                },
+                {
+                    "question": "Apa saja layanan yang ditawarkan UNION CREATIVE DESIGN dalam bidang promosi/advertising?",
+                    "answer": "Kami menawarkan layanan promosi baik outdoor seperti neon box, billboard, neon sign, dan indoor melalui media radio, televisi, media massa, serta pameran."
+                },
+                {
+                    "question": "Apakah UNION CREATIVE DESIGN juga menyediakan layanan instalasi listrik?",
+                    "answer": "Ya, kami menyediakan jasa instalasi listrik untuk kantor dan rumah, termasuk konsultasi terkait electrical."
+                },
+                {
+                    "question": "Bagaimana cara menghubungi UNION CREATIVE DESIGN untuk memulai proyek?",
+                    "answer": "Anda bisa menghubungi kontak person kami: Helik di +62 813 8704 S066, Irpan di +62 857 0951 a6!, atau Irwansyah di +62 811 885 8059. Kami akan siap membantu Anda untuk memulai proyek Anda."
+                }
+            ],
+            "freqFaq": [
+                {
+                    "question": "Bagaimana cara UNION CREATIVE DESIGN memastikan kualitas hasil kerja mereka?",
+                    "answer": "Kami memastikan kualitas melalui manajemen yang baik, SDM yang berkompeten, serta penggunaan teknologi terbaru dalam setiap proyek. Kami juga selalu berusaha untuk memenuhi standar industri yang berkualitas dan diakui."
+                },
+                {
+                    "question": "Apa saja jasa yang disediakan oleh UNION CREATIVE DESIGN dalam bidang furnitur?",
+                    "answer": "Kami menyediakan jasa pembuatan partisi, pelapon drop ceiling, booth, display, serta furnitur kantor dan rumah seperti kursi, sofa, meja, dan lemari. Kami juga menawarkan jasa tata letak dan desain interior."
+                },
+                {
+                    "question": "Apakah UNION CREATIVE DESIGN juga menyediakan bahan untuk proyek-proyek eksterior?",
+                    "answer": "Ya, kami adalah supplier bahan untuk interior, eksterior, promosi/advertising, mechanical, dan electrical."
+                },
+                {
+                    "question": "Bagaimana cara UNION CREATIVE DESIGN menangani proyek dengan deadline yang ketat?",
+                    "answer": "Dengan pengalaman dan SDM yang ahli, kami selalu mengutamakan efisiensi waktu dan biaya dalam setiap proyek. Kami menggunakan teknologi mutakhir untuk memastikan semua proyek selesai tepat waktu dan sesuai anggaran."
+                },
+                {
+                    "question": "Apakah UNION CREATIVE DESIGN hanya melayani perusahaan besar atau juga individu?",
+                    "answer": "Kami melayani berbagai klien, baik perusahaan besar, instansi, maupun individu. Kami siap memberikan layanan terbaik sesuai kebutuhan klien kami."
+                }
+            ]
+        }
     },
     "AboutSection": {
         "welcome": "Selamat Datang di",
@@ -272,5 +318,22 @@
                 "budget": "Anggaran"
             }
         }
+    },
+    "Footer": {
+        "cta-text": "UBAH DESAIN INTERIOR RUMAH ANDA SEKARANG",
+        "cta-button": "HUBUNGI KAMI",
+        "intro-title": "Membuat Lebih Baik dengan Pengalaman",
+        "intro-desc": "Selamat datang di UNION CREATIVE DESIGN, mitra terpercaya Anda dalam menciptakan solusi interior dan konstruksi yang inovatif dan berkualitas tinggi. Terletak di pusat kota Bandung, Jawa Barat, dengan kantor cabang di Cimahi Selatan, kami berkomitmen untuk meningkatkan lingkungan bisnis Anda dengan profesionalisme dan keahlian.",
+        "navigation-title": "NAVIGASI",
+        "nav-home": "Beranda",
+        "nav-about": "Tentang Kami",
+        "nav-services": "Layanan",
+        "nav-projects": "Proyek",
+        "contact-title": "HUBUNGI KAMI",
+        "contact-button": "WhatsApp Sekarang",
+        "contact-link": "https://wa.me/6281234567890?text=Halo%20Union%20Creative%20Design%2C%20saya%20ingin%20bertanya%20tentang%20produk%20dan%20layanan%20yang%20anda%20tawarkan",
+        "footer-note": "Seluruh Hak Cipta - UNION CREATIVE DESIGN © 2024",
+        "privacy-policy": "Kebijakan Privasi",
+        "terms-of-use": "Syarat Penggunaan"
     }
 }
