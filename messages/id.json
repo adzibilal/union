@@ -21,5 +21,58 @@
         "freq-questions": "Pertanyaan yang Sering Ditanyakan",
         "freq-title": "Pertanyaan yang Biasanya Ditanyakan oleh Klien",
         "freq-desc": "Kami sering menerima pertanyaan dari klien mengenai berbagai topik penting. Pertanyaan yang paling sering diajukan meliputi cara penggunaan layanan kami, proses pengiriman, dan kebijakan pengembalian. Kami selalu berusaha memberikan jawaban yang jelas dan informatif untuk membantu klien memahami layanan kami dengan lebih baik."
+    },
+    "AboutSection": {
+        "welcome": "Selamat Datang di",
+        "companyName": "UNION CREATIVE DESIGN",
+        "description": "Kami hadir untuk mewujudkan hunian impian Anda menjadi kenyataan. Dengan pengalaman lebih dari 10 tahun, kami adalah solusi terdepan untuk desain hunian terbaik.",
+        "features-1": "Furnitur Custom Berteknologi Tinggi",
+        "features-2": "Desain Arsitektur & Interior yang Profesional",
+        "features-3": "Konstruksi & Renovasi Berkualitas",
+        "features-4": "Ahli Dekorasi dengan Sentuhan Estetika",
+        "experience": "Pengalaman",
+        "projects": "Proyek",
+        "clients": "Klien"
+    },
+    "InfoBox": {
+        "1": {
+            "title": "KONSULTASI DESAIN RUMAH",
+            "description": "Wujudkan hunian impian Anda bersama tim ahli kami. Dapatkan solusi desain yang personal dan sesuai dengan kebutuhan serta gaya hidup Anda."
+        },
+        "2": {
+            "title": "DESAIN INTERIOR RUANGAN 3D & 2D",
+            "description": "Visualisasikan hunian impian Anda dengan desain 3D & 2D yang detail dan realistis. Rasakan pengalaman menjelajahi rumah Anda sebelum dibangun."
+        },
+        "3": {
+            "title": "FURNITUR INTERIOR CUSTOM",
+            "description": " Lengkapi hunian Anda dengan furnitur custom berkualitas tinggi yang dirancang khusus untuk memaksimalkan fungsi dan estetika ruang."
+        }
+    },
+    "ProduceWorkSection": {
+        "title": "PROSEDUR KERJA KAMI",
+        "subtitle": "Cara Kami Bekerja",
+        "1": {
+            "title": "KONSULTASI DESAIN DENGAN KLIEN",
+            "description": "Kami memulai dengan memahami kebutuhan dan visi desain Anda melalui konsultasi mendalam."
+        },
+        "2": {
+            "title": "PEMBUATAN PROTOTYPE DESAIN RUMAH",
+            "description": "Kami mengembangkan prototype desain awal berdasarkan hasil konsultasi, memberikan gambaran visual tentang konsep rumah Anda."
+        },
+        "3": {
+            "title": "PENGEMBANGAN DESAIN RUMAH",
+            "description": "Prototype desain disempurnakan dengan detail yang lebih spesifik, memastikan desain akhir sesuai dengan harapan dan kebutuhan Anda."
+        }
+    },
+    "PortofolioSection" : {
+        "title": "Kepuasan Anda Adalah Prioritas Bagi Kami",
+        "subtitle": "Portofolio Kami",
+        "description": "Kami berkomitmen untuk memberikan pelayanan terbaik dan hasil yang memuaskan. Setiap proyek kami kerjakan dengan sepenuh hati, karena kebahagiaan Anda adalah kebanggaan kami.",
+        "button": "Lihat Semua Proyek"
+    },
+    "CTAHomePage" : {
+        "title": "Jadikan Hunian Anda Lebih Bermakna Bersama Kami",
+        "subtitle": "Hubungi kami sekarang untuk konsultasi gratis dan wujudkan hunian impian Anda bersama UNION CREATIVE DESIGN.",
+        "button": "Hubungi Kami"
     }
 }

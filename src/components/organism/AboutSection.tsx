@@ -2,8 +2,10 @@ import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
 import { FaCheckCircle } from 'react-icons/fa'
 import Image from 'next/image'
+import { useTranslations } from 'next-intl'
 
 const AboutSection = () => {
+    const t = useTranslations('AboutSection')
     return (
         <div className='max-container py-32'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
@@ -16,32 +18,38 @@ const AboutSection = () => {
                 />
                 <div className=''>
                     <SectionTitle
-                        subTitle='Selamat Datang di'
-                        title='UNION CREATIVE DESIGN'
+                        subTitle={t('welcome')}
+                        title={t('companyName')}
                     />
 
                     <div className='text-md text-zinc-500 text-justify mb-2 leading-relaxed mt-4'>
-                        Kami hadir untuk mewujudkan hunian impian Anda menjadi
-                        kenyataan. Dengan pengalaman lebih dari 10 tahun, kami
-                        adalah solusi terdepan untuk desain hunian terbaik.
+                        {t('description')}
                     </div>
                     <div className='grid grid-cols-1 gap-3 mt-8'>
                         {/* item checklist */}
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Furnitur Custom Berteknologi Tinggi</div>
+                            <div className='text-zinc-500'>
+                                {t('features-1')}
+                            </div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Desain Arsitektur & Interior yang Profesional</div>
+                            <div className='text-zinc-500'>
+                                {t('features-2')}
+                            </div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Konstruksi & Renovasi Berkualitas</div>
+                            <div className='text-zinc-500'>
+                                {t('features-3')}
+                            </div>
                         </div>
                         <div className='flex items-center gap-3'>
                             <FaCheckCircle className='text-u-orange-500' />
-                            <div className='text-zinc-500'>Ahli Dekorasi dengan Sentuhan Estetika</div>
+                            <div className='text-zinc-500'>
+                                {t('features-4')}
+                            </div>
                         </div>
                     </div>
 
@@ -52,7 +60,7 @@ const AboutSection = () => {
                                 10 Y+
                             </div>
                             <div className='uppercase text-zinc-600'>
-                                Experience
+                                {t('experience')}
                             </div>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-3'>
@@ -60,7 +68,7 @@ const AboutSection = () => {
                                 100+
                             </div>
                             <div className='uppercase text-zinc-600'>
-                                Projects
+                                {t('projects')}
                             </div>
                         </div>
                         <div className='flex flex-col items-center justify-center gap-3'>
@@ -68,7 +76,7 @@ const AboutSection = () => {
                                 50+
                             </div>
                             <div className='uppercase text-zinc-600'>
-                                Clients
+                                {t('clients')}
                             </div>
                         </div>
                     </div>

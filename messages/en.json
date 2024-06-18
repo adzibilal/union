@@ -21,5 +21,58 @@
         "freq-questions": "Frequently Asked Questions",
         "freq-title": "Common Questions Asked by Clients",
         "freq-desc": "We often receive questions from clients about various important topics. The most frequently asked questions include how to use our services, the shipping process, and return policies. We always strive to provide clear and informative answers to help clients better understand our services."
+    },
+    "AboutSection": {
+        "welcome": "Welcome to",
+        "companyName": "UNION CREATIVE DESIGN",
+        "description": "We are here to turn your dream home into reality. With over 10 years of experience, we are the leading solution for the best home design.",
+        "features-1": "High-Tech Custom Furniture",
+        "features-2": "Professional Architectural & Interior Design",
+        "features-3": "Quality Construction & Renovation",
+        "features-4": "Aesthetically Pleasing Decor Expertise",
+        "experience": "Experience",
+        "projects": "Projects",
+        "clients": "Clients"
+    },
+    "InfoBox": {
+        "1": {
+            "title": "HOME DESIGN CONSULTATION",
+            "description": "Create your dream home with our team of experts. Get personalized design solutions that fit your needs and lifestyle."
+        },
+        "2": {
+            "title": "3D & 2D INTERIOR ROOM DESIGN",
+            "description": "Visualize your dream home with detailed and realistic 3D & 2D designs. Experience the feeling of exploring your home before it's built."
+        },
+        "3": {
+            "title": "CUSTOM INTERIOR FURNITURE",
+            "description": "Complete your home with high-quality custom furniture designed specifically to maximize the function and aesthetics of your space."
+        }
+    },
+    "ProduceWorkSection": {
+        "title": "Our Work Process",
+        "subtitle": "How We Work",
+        "1": {
+            "title": "DESIGN CONSULTATION WITH CLIENTS",
+            "description": "We begin by understanding your needs and design vision through in-depth consultation."
+        },
+        "2": {
+            "title": "CREATION OF HOME DESIGN PROTOTYPE",
+            "description": "We develop an initial design prototype based on the consultation results, providing a visual representation of your home concept."
+        },
+        "3": {
+            "title": "HOME DESIGN DEVELOPMENT",
+            "description": "The design prototype is refined with more specific details, ensuring the final design meets your expectations and needs."
+        }
+    },
+    "PortofolioSection": {
+        "title": "Your Satisfaction Is Our Priority",
+        "subtitle": "Our Portfolio",
+        "description": "We are committed to providing the best service and satisfactory results. We work on every project wholeheartedly, because your happiness is our pride.",
+        "button": "See All Projects"
+    },
+    "CTAHomePage": {
+        "title": "Make Your Home More Meaningful With Us",
+        "subtitle": "Contact us now for a free consultation and make your dream home a reality with UNION CREATIVE DESIGN.",
+        "button": "Contact Us"
     }
 }
