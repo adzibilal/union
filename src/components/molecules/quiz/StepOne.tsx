@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { FaCheckCircle } from 'react-icons/fa'
@@ -34,11 +35,11 @@ const StepOne: React.FC<StepOneProps> = ({
         setSelected(styleId)
         setSelectedStyle(styleId)
     }
-
+    const t = useTranslations('StyleQuiz')
     return (
         <div className='px-5 py-3'>
             <div className='text-2xl font-bold mb-3'>
-                Gaya interior apa yang paling Anda sukai?
+                {t('questions.0')}
             </div>
             <div className='grid grid-cols-2 gap-3 max-md:grid-cols-1'>
                 {styles.map(style => (
@@ -74,7 +75,7 @@ const StepOne: React.FC<StepOneProps> = ({
                         onNext()
                     }}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
-                    SELANJUTNYA
+                    {t('next')}
                 </button>
             </div>
         </div>

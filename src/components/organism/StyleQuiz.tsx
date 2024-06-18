@@ -6,6 +6,7 @@ import StepThree from '../molecules/quiz/StepThree'
 import StepFour from '../molecules/quiz/StepFour'
 import StepFive from '../molecules/quiz/StepFive'
 import ResultQuiz from './ResultQuiz'
+import { useTranslations } from 'next-intl'
 
 const StyleQuiz = () => {
     const [currentStep, setCurrentStep] = React.useState(0)
@@ -16,21 +17,22 @@ const StyleQuiz = () => {
         null,
         null
     ])
+    const t = useTranslations('StyleQuiz')
 
     return (
         <div className='max-md:pt-5 max-md:pb-10'>
             {currentStep === 0 ? (
                 <div className='flex flex-col items-center justify-center gap-2 h-full max-md:py-10 max-md:text-center'>
                     <div className='text-2xl font-bold max-sm:text-xl'>
-                        Apa gaya desain interior saya?
+                        {t('title')}
                     </div>
                     <div className='text-sm text-zinc-600'>
-                        Temukan gaya desain interior Anda
+                        {t('subtitle')}
                     </div>
                     <div
                         onClick={() => setCurrentStep(1)}
                         className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
-                        MUAI QUIZ
+                        {t('startQuiz')}
                     </div>
                 </div>
             ) : currentStep === 1 ? (

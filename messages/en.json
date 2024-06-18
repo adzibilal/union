@@ -171,5 +171,49 @@
             "submitButton": "WhatsApp Now"
         },
         "whatsappMessage": "Hi, I am {firstName} {lastName}. {message}. My email is {email}"
+    },
+    "StyleQuiz": {
+        "title": "What is my interior design style?",
+        "subtitle": "Discover the interior design style that matches your personality.",
+        "startQuiz": "Start Quiz",
+        "questions": [
+            "What interior style do you like the most?",
+            "What is your favorite color for the walls of your main room?",
+            "What kind of furniture appeals to you the most?",
+            "How would you describe your ideal lighting?",
+            "What kind of home accessories do you like the most?"
+        ],
+        "next": "Next",
+        "prev": "Previous"
+    },
+    "ResultQuiz": {
+        "title": "Quiz Results",
+        "noAnswer": {
+            "result": "No answer",
+            "description": ""
+        },
+        "styles": {
+            "1": {
+                "image": "/assets/images/quiz/modern-1.jpg",
+                "result": "Modern",
+                "description": "Modern style emphasizes minimalist design with clean lines and a neutral color palette. Functionality and simple aesthetics are the main focus."
+            },
+            "2": {
+                "image": "/assets/images/quiz/classic.jpg",
+                "result": "Classic",
+                "description": "Classic style is inspired by elegant and luxurious European design, with rich decorative ornaments and intricate details."
+            },
+            "3": {
+                "image": "/assets/images/quiz/scandinavian.jpg",
+                "result": "Scandinavian",
+                "description": "Scandinavian style is known for its simplicity, functionality, and natural beauty. It uses a lot of wood elements, bright colors, and open spaces."
+            },
+            "4": {
+                "image": "/assets/images/quiz/industrial.jpg",
+                "result": "Industrial",
+                "description": "Industrial style features raw materials such as exposed brick, metal, and unfinished wood. The design often looks masculine and utilitarian."
+            }
+        },
+        "cta": "CONSULT NOW"
     }
 }

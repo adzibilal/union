@@ -171,5 +171,49 @@
             "submitButton": "WhatsApp Sekarang"
         },
         "whatsappMessage": "Hi, saya {firstName} {lastName}. {message}. Email saya adalah {email}"
+    },
+    "StyleQuiz": {
+        "title": "Apa gaya desain interior saya?",
+        "subtitle": "Temukan gaya desain interior yang sesuai dengan kepribadian Anda.",
+        "startQuiz": "Mulai Kuis",
+        "questions": [
+            "Gaya interior apa yang paling Anda sukai?",
+            "Warna apa yang paling Anda sukai untuk dinding ruangan utama Anda?",
+            "Furnitur seperti apa yang paling menarik bagi Anda?",
+            "Bagaimana Anda menggambarkan pencahayaan ideal Anda?",
+            "Aksesori rumah seperti apa yang paling Anda sukai?"
+        ],
+        "next": "Selanjutnya",
+        "prev": "Sebelumnya"
+    },
+    "ResultQuiz": {
+        "title": "Hasil Quiz",
+        "noAnswer": {
+            "result": "Tidak ada jawaban",
+            "description": ""
+        },
+        "styles": {
+            "1": {
+                "image": "/assets/images/quiz/modern-1.jpg",
+                "result": "Modern",
+                "description": "Gaya modern mengedepankan desain minimalis dengan garis-garis bersih dan palet warna netral. Fungsionalitas dan estetika yang sederhana menjadi fokus utama."
+            },
+            "2": {
+                "image": "/assets/images/quiz/classic.jpg",
+                "result": "Classic",
+                "description": "Gaya klasik terinspirasi oleh desain Eropa yang elegan dan mewah, dengan ornamen dekoratif yang kaya dan detail yang rumit."
+            },
+            "3": {
+                "image": "/assets/images/quiz/scandinavian.jpg",
+                "result": "Skandinavia",
+                "description": "Gaya Skandinavia terkenal dengan kesederhanaan, fungsionalitas, dan keindahan alami. Menggunakan banyak elemen kayu, warna-warna terang, dan ruang terbuka."
+            },
+            "4": {
+                "image": "/assets/images/quiz/industrial.jpg",
+                "result": "Industrial",
+                "description": "Gaya industrial menampilkan material mentah seperti batu bata, logam, dan kayu yang belum diolah. Desainnya sering kali terlihat maskulin dan utilitarian."
+            }
+        },
+        "cta": "KONSULTASI SEKARANG"
     }
 }
