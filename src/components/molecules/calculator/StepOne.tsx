@@ -1,4 +1,5 @@
 'use client'
+import { useTranslations } from 'next-intl'
 import React, { useState, useEffect } from 'react'
 
 interface StepOneProps {
@@ -14,6 +15,7 @@ const StepOne: React.FC<StepOneProps> = ({
     selected,
     onSelect
 }) => {
+    const t = useTranslations('CalculatorDesign.steps.stepOne')
     const roomType = [
         '1 Bedroom',
         '2 Bedroom SMALL',
@@ -37,9 +39,7 @@ const StepOne: React.FC<StepOneProps> = ({
 
     return (
         <div className='py-10'>
-            <div className='text-3xl mb-8 text-center'>
-                Masukan Jumlah Ruangan
-            </div>
+            <div className='text-3xl mb-8 text-center'>{t('title')}</div>
 
             <fieldset className='grid grid-cols-2 max-md:grid-cols-1 gap-4'>
                 <legend className='sr-only'>Room Type</legend>
@@ -72,7 +72,7 @@ const StepOne: React.FC<StepOneProps> = ({
                     disabled={!selectedType}
                     onClick={onNext}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
-                    SELANJUTNYA
+                    {t('buttonNext')}
                 </button>
             </div>
         </div>

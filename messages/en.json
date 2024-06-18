@@ -215,5 +215,62 @@
             }
         },
         "cta": "CONSULT NOW"
+    },
+    "CalculatorPage": {
+        "title": "Estimate your project cost"
+    },
+    "CalculatorDesign": {
+        "steps": {
+            "stepOne": {
+                "title": "Select Room Type",
+                "buttonNext": "Next",
+                "buttonPrev": "Previous"
+            },
+            "stepTwo": {
+                "title": "Number of Rooms to be Designed",
+                "buttonNext": "Next",
+                "buttonPrev": "Previous",
+                "rooms": {
+                    "ruangTamu": "Living Room",
+                    "livingRoom": "Living Room",
+                    "kitchen": "Kitchen",
+                    "bedroom": "Bedroom",
+                    "bathroom": "Bathroom",
+                    "diningRoom": "Dining Room",
+                    "otherBedroom": "Other Bedroom"
+                }
+            },
+            "stepThree": {
+                "title": "Select Your Budget",
+                "buttonNext": "Next",
+                "buttonPrev": "Previous"
+            },
+            "stepFour": {
+                "title": "Enter Contact Information",
+                "buttonNext": "Next",
+                "buttonPrev": "Previous",
+                "fields": {
+                    "name": "Name",
+                    "email": "Email",
+                    "location": "Location"
+                },
+                "submitButton": "Estimate Now"
+            },
+            "result": {
+                "title": "Thank you for filling out the form",
+                "description": "We will contact you soon",
+                "buttonFinish": "Re-estimate"
+            }
+        },
+        "messages": {
+            "submitMessage": {
+                "name": "Name",
+                "email": "Email",
+                "location": "Location",
+                "roomType": "Room Type",
+                "roomToDesign": "Rooms to be Designed",
+                "budget": "Budget"
+            }
+        }
     }
 }

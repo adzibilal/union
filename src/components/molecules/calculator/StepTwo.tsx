@@ -1,4 +1,5 @@
 'use client'
+import { useTranslations } from 'next-intl'
 import React, { useState, useEffect } from 'react'
 
 interface dataRoomType {
@@ -31,13 +32,6 @@ const StepTwo: React.FC<StepTwoProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dataRoom])
 
-    const parseKeyToName = (key: string) => {
-        return key
-            .split(/(?=[A-Z])/)
-            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ')
-    }
-
     const handleQuantityChange = (room: keyof dataRoomType, amount: number) => {
         setDataRoom(prevData => ({
             ...prevData,
@@ -45,11 +39,11 @@ const StepTwo: React.FC<StepTwoProps> = ({
         }))
     }
 
+    const t = useTranslations('CalculatorDesign.steps.stepTwo')
+
     return (
         <div className='py-10'>
-            <div className='text-3xl mb-8 text-center'>
-                Ruangan yang akan di Desain
-            </div>
+            <div className='text-3xl mb-8 text-center'>{t('title')}</div>
 
             <div className='grid grid-cols-2 max-md:grid-cols-1 gap-4'>
                 {Object.keys(dataRoom).map((room, index) => (
@@ -60,7 +54,7 @@ const StepTwo: React.FC<StepTwoProps> = ({
                             <label
                                 htmlFor={room}
                                 className='text-sm font-medium'>
-                                {parseKeyToName(room)}
+                                {t(`rooms.${room}`)}
                             </label>
                         </div>
                         <div>
@@ -110,12 +104,12 @@ const StepTwo: React.FC<StepTwoProps> = ({
                 <button
                     onClick={onPrev}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
-                    SEBELUMNYA
+                    {t('buttonPrev')}
                 </button>
                 <button
                     onClick={onNext}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
-                    SELANJUTNYA
+                    {t('buttonNext')}
                 </button>
             </div>
         </div>

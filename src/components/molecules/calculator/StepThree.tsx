@@ -1,4 +1,5 @@
 'use client'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 
@@ -27,9 +28,11 @@ const StepThree: React.FC<StepThreeProps> = ({
         onSelect(budgetType)
     }
 
+    const t = useTranslations('CalculatorDesign.steps.stepThree')
+
     return (
         <div className='py-10'>
-            <div className='text-3xl mb-8 text-center'>Pilih Budget Anda</div>
+            <div className='text-3xl mb-8 text-center'>{t('title')}</div>
 
             <fieldset className='grid grid-cols-2 max-md:grid-cols-1 gap-4'>
                 <legend className='sr-only'>Budget Type</legend>
@@ -47,7 +50,9 @@ const StepThree: React.FC<StepThreeProps> = ({
                                     height={100}
                                     className='w-full'
                                 />
-                                <p className='absolute bg-u-orange-500 text-white uppercase px-4 py-2 bottom-0 left-0'>{budget}</p>
+                                <p className='absolute bg-u-orange-500 text-white uppercase px-4 py-2 bottom-0 left-0'>
+                                    {budget}
+                                </p>
                             </div>
 
                             <input
@@ -68,13 +73,13 @@ const StepThree: React.FC<StepThreeProps> = ({
                 <button
                     onClick={onPrev}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90'>
-                    SEBELUMNYA
+                    {t('buttonPrev')}
                 </button>
                 <button
                     disabled={!selectedType}
                     onClick={onNext}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
-                    SELANJUTNYA
+                    {t('buttonNext')}
                 </button>
             </div>
         </div>

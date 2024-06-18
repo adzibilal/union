@@ -1,4 +1,5 @@
 'use cient'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 import { FaEnvelope, FaMailBulk, FaUser } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'
@@ -31,10 +32,12 @@ const StepFour: React.FC<StepFourProps> = ({
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dataContact])
 
+    const t = useTranslations('CalculatorDesign.steps.stepFour')
+
     return (
         <div className='py-10'>
             <div className='text-3xl mb-8 text-center'>
-                Masukan Informasi Kontak
+                {t('title')}
             </div>
 
             <div className='grid grid-cols-1 gap-4'>
@@ -43,7 +46,7 @@ const StepFour: React.FC<StepFourProps> = ({
                         htmlFor='name'
                         className='text-gray-700 flex items-center gap-2 pl-3'>
                         <FaUser />
-                        Nama
+                        {t('fields.name')}
                     </label>
                     <input
                         type='text'
@@ -64,7 +67,7 @@ const StepFour: React.FC<StepFourProps> = ({
                         htmlFor='email'
                         className='text-gray-700 flex items-center gap-2 pl-3'>
                         <FaEnvelope />
-                        Email
+                        {t('fields.email')}
                     </label>
                     <input
                         type='email'
@@ -85,7 +88,7 @@ const StepFour: React.FC<StepFourProps> = ({
                         htmlFor='location'
                         className='text-gray-700 flex items-center gap-2 pl-3'>
                         <FaLocationDot />
-                        Lokasi
+                        {t('fields.location')}
                     </label>
                     <input
                         type='text'
@@ -111,7 +114,7 @@ const StepFour: React.FC<StepFourProps> = ({
                     }
                     onClick={handleSubmit}
                     className='bg-u-orange-500 text-white px-6 py-3 uppercase mt-3 cursor-pointer hover:bg-u-orange-500/90 disabled:opacity-50 disabled:cursor-not-allowed'>
-                    Estimasi Sekarang
+                    {t('submitButton')}
                 </button>
             </div>
         </div>

@@ -1,5 +1,6 @@
 'use client'
 import React from 'react'
+import { useTranslations } from 'next-intl'
 import StepOne from '../molecules/calculator/StepOne'
 import StepTwo from '../molecules/calculator/StepTwo'
 import StepThree from '../molecules/calculator/StepThree'
@@ -26,6 +27,7 @@ interface payloadCalculator {
 }
 
 const CalculatorDesign = () => {
+    const t = useTranslations('CalculatorDesign')
     const [currentStep, setCurrentStep] = React.useState(0)
     const [payload, setPayload] = React.useState<payloadCalculator>({
         roomType: '',
@@ -48,16 +50,27 @@ const CalculatorDesign = () => {
 
     const submit = () => {
         const roomToDesignMessage = Object.entries(payload.roomToDesign)
-            .map(([room, count]) => `${room}: ${count}`)
+            .map(
+                ([room, count]) =>
+                    `${t(`steps.stepTwo.rooms.${room}`)}: ${count}`
+            )
             .join('%0A')
 
         const waMessage =
-            `Nama: ${payload.contactInfo.name}%0A` +
-            `Email: ${payload.contactInfo.email}%0A` +
-            `Lokasi: ${payload.contactInfo.location}%0A` +
-            `Room Type: ${payload.roomType}%0A` +
-            `Room To Design:%0A${roomToDesignMessage}%0A` +
-            `Budget: ${payload.budget}`
+            `${t('messages.submitMessage.name')}: ${
+                payload.contactInfo.name
+            }%0A` +
+            `${t('messages.submitMessage.email')}: ${
+                payload.contactInfo.email
+            }%0A` +
+            `${t('messages.submitMessage.location')}: ${
+                payload.contactInfo.location
+            }%0A` +
+            `${t('messages.submitMessage.roomType')}: ${payload.roomType}%0A` +
+            `${t(
+                'messages.submitMessage.roomToDesign'
+            )}:%0A${roomToDesignMessage}%0A` +
+            `${t('messages.submitMessage.budget')}: ${payload.budget}`
 
         const waLink = `https://wa.me/6285156510302?text=${waMessage}`
 
@@ -86,6 +99,7 @@ const CalculatorDesign = () => {
         })
         setCurrentStep(0)
     }
+
     return (
         <div>
             {currentStep === 0 ? (

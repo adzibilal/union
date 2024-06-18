@@ -215,5 +215,62 @@
             }
         },
         "cta": "KONSULTASI SEKARANG"
+    },
+    "CalculatorPage": {
+        "title": "Estimasikan Biaya Desain Interior Anda"
+    },
+    "CalculatorDesign": {
+        "steps": {
+            "stepOne": {
+                "title": "Pilih Tipe Ruangan",
+                "buttonNext": "Selanjutnya",
+                "buttonPrev": "Sebelumnya"
+            },
+            "stepTwo": {
+                "title": "Jumlah Ruangan yang Akan Didisain",
+                "buttonNext": "Selanjutnya",
+                "buttonPrev": "Sebelumnya",
+                "rooms": {
+                    "ruangTamu": "Ruang Tamu",
+                    "livingRoom": "Living Room",
+                    "kitchen": "Dapur",
+                    "bedroom": "Kamar Tidur",
+                    "bathroom": "Kamar Mandi",
+                    "diningRoom": "Ruang Makan",
+                    "otherBedroom": "Kamar Tidur Lainnya"
+                }
+            },
+            "stepThree": {
+                "title": "Pilih Anggaran Anda",
+                "buttonNext": "Selanjutnya",
+                "buttonPrev": "Sebelumnya"
+            },
+            "stepFour": {
+                "title": "Masukan Informasi Kontak",
+                "buttonNext": "Selanjutnya",
+                "buttonPrev": "Sebelumnya",
+                "fields": {
+                    "name": "Nama",
+                    "email": "Email",
+                    "location": "Lokasi"
+                },
+                "submitButton": "Estimasi Sekarang"
+            },
+            "result": {
+                "title": "Terimakasih telah mengisi formulir",
+                "description": "Kami akan segera menghubungi anda",
+                "buttonFinish": "Estimasi Ulang"
+            }
+        },
+        "messages": {
+            "submitMessage": {
+                "name": "Nama",
+                "email": "Email",
+                "location": "Lokasi",
+                "roomType": "Tipe Ruangan",
+                "roomToDesign": "Ruangan yang Akan Didisain",
+                "budget": "Anggaran"
+            }
+        }
     }
 }
