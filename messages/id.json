@@ -64,15 +64,62 @@
             "description": "Prototype desain disempurnakan dengan detail yang lebih spesifik, memastikan desain akhir sesuai dengan harapan dan kebutuhan Anda."
         }
     },
-    "PortofolioSection" : {
+    "PortofolioSection": {
         "title": "Kepuasan Anda Adalah Prioritas Bagi Kami",
         "subtitle": "Portofolio Kami",
         "description": "Kami berkomitmen untuk memberikan pelayanan terbaik dan hasil yang memuaskan. Setiap proyek kami kerjakan dengan sepenuh hati, karena kebahagiaan Anda adalah kebanggaan kami.",
         "button": "Lihat Semua Proyek"
     },
-    "CTAHomePage" : {
+    "CTAHomePage": {
         "title": "Jadikan Hunian Anda Lebih Bermakna Bersama Kami",
         "subtitle": "Hubungi kami sekarang untuk konsultasi gratis dan wujudkan hunian impian Anda bersama UNION CREATIVE DESIGN.",
         "button": "Hubungi Kami"
+    },
+    "AboutPage": {
+        "pageTitle": "Tentang Kami",
+        "pageSubtitle": "Kami adalah agensi kreatif yang berfokus pada penyediaan solusi digital terbaik untuk klien kami.",
+        "sectionTitle": "UNION CREATIVE DESIGN",
+        "sectionSubtitle": "Solusi One-Stop Smart Living",
+        "sectionDescription": "Kami hadir untuk mewujudkan hunian impian Anda menjadi kenyataan. Dengan pengalaman lebih dari 10 tahun, kami adalah solusi terdepan untuk desain hunian terbaik.",
+        "portfolioButton": "PORTOFOLIO KAMI",
+        "visionTitle": "Visi Kami",
+        "visionText": "Menjadi perusahaan penyedia solusi hunian terdepan yang menghadirkan desain bermakna, fungsional, dan estetis.",
+        "missionTitle": "Misi Kami",
+        "missionItems": {
+            "1": "Memberikan layanan one-stop smart living solution yang komprehensif dan berkualitas tinggi.",
+            "2": "Menciptakan hunian yang unik, personal, dan mencerminkan kepribadian pemiliknya.",
+            "3": "Menggunakan teknologi terkini dan material berkualitas untuk hasil terbaik.",
+            "4": "Membangun hubungan jangka panjang dengan klien berdasarkan kepercayaan dan kepuasan."
+        },
+        "aboutImageAlt": "Gambar tentang perusahaan"
+    },
+    "KeunggulanKamiSection": {
+        "subtitle": "Keunggulan Kami",
+        "title": "Mengapa Memilih Kami?",
+        "timProfesional": {
+            "title": "Tim Profesional",
+            "description": "Didukung oleh tim arsitek, desainer interior, ahli konstruksi, dan dekorator yang berpengalaman dan berdedikasi."
+        },
+        "teknologiCanggih": {
+            "title": "Teknologi Canggih",
+            "description": "Menggunakan mesin-mesin canggih berteknologi tinggi untuk menghasilkan produk berkualitas tinggi."
+        },
+        "workshopTerpadu": {
+            "title": "Workshop Terpadu",
+            "description": "Memiliki fasilitas kantor dan workshop terpadu di Bandung Barat untuk efisiensi dan kualitas produksi."
+        },
+        "portofolioKuat": {
+            "title": "Portofolio Kuat",
+            "description": "Telah menyelesaikan berbagai proyek hunian dengan hasil yang memuaskan."
+        }
+    },
+    "OurTeam": {
+        "title": "Tim Kami",
+        "subtitle": "Kami adalah tim profesional yang berdedikasi untuk memberikan layanan terbaik bagi klien kami."
+    },
+    "CTAWhatsApp": {
+        "contactUsNow": "Hubungi Kami Sekarang",
+        "chatNow": "Chat Sekarang",
+        "quote": "\"KERJA KERAS & KUALITAS TINGGI ADALAH PRIORITAS KAMI\""
     }
 }

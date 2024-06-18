@@ -74,5 +74,52 @@
         "title": "Make Your Home More Meaningful With Us",
         "subtitle": "Contact us now for a free consultation and make your dream home a reality with UNION CREATIVE DESIGN.",
         "button": "Contact Us"
+    },
+    "AboutPage": {
+        "pageTitle": "About Us",
+        "pageSubtitle": "We are a creative agency that focuses on delivering the best digital solutions for our clients.",
+        "sectionTitle": "UNION CREATIVE DESIGN",
+        "sectionSubtitle": "One-Stop Smart Living Solution",
+        "sectionDescription": "We are here to turn your dream home into reality. With over 10 years of experience, we are the leading solution for the best home design.",
+        "portfolioButton": "OUR PORTFOLIO",
+        "visionTitle": "Our Vision",
+        "visionText": "To be the leading provider of home solutions that deliver meaningful, functional, and aesthetic designs.",
+        "missionTitle": "Our Mission",
+        "missionItems": {
+            "1": "Providing comprehensive and high-quality one-stop smart living solutions.",
+            "2": "Creating unique, personal homes that reflect the owner's personality.",
+            "3": "Utilizing the latest technology and quality materials for the best results.",
+            "4": "Building long-term relationships with clients based on trust and satisfaction."
+        },
+        "aboutImageAlt": "Image about the company"
+    },
+    "KeunggulanKamiSection": {
+        "subtitle": "Our Advantages",
+        "title": "Why Choose Us?",
+        "timProfesional": {
+            "title": "Professional Team",
+            "description": "Supported by a team of experienced and dedicated architects, interior designers, construction experts, and decorators."
+        },
+        "teknologiCanggih": {
+            "title": "Advanced Technology",
+            "description": "Utilizing high-tech machinery to produce high-quality products."
+        },
+        "workshopTerpadu": {
+            "title": "Integrated Workshop",
+            "description": "We have an integrated office and workshop facility in West Bandung for efficiency and production quality."
+        },
+        "portofolioKuat": {
+            "title": "Strong Portfolio",
+            "description": "We have completed various residential projects with satisfactory results."
+        }
+    },
+    "OurTeam": {
+        "title": "Our Team",
+        "subtitle": "We are a team of professionals dedicated to providing the best service to our clients."
+    },
+    "CTAWhatsApp": {
+        "contactUsNow": "Contact Us Now",
+        "chatNow": "Chat Now",
+        "quote": "\"WORK HARD & GREAT QUALITY IS OUR PRIORITY\""
     }
 }

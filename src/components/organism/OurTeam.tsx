@@ -2,6 +2,7 @@ import React from 'react'
 import SectionTitle from '../molecules/SectionTitle'
 import Image from 'next/image'
 import TeamItem from '../molecules/TeamItem'
+import { useTranslations } from 'next-intl'
 
 const OurTeam = () => {
     const team = [
@@ -57,9 +58,10 @@ const OurTeam = () => {
         }
     ]
 
+    const t = useTranslations('OurTeam')
     return (
         <div className='max-container'>
-            <SectionTitle subTitle='Our Team' title='We Work With Team' />
+            <SectionTitle subTitle={t('title')} title={t('subtitle')} />
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-10 items-center pt-20'>
                 {team.map((item, index) => (
                     <TeamItem
