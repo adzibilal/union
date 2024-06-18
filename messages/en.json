@@ -151,5 +151,25 @@
                 "description": "Our company only employs field workers who are skilled and tested in their fields. An experienced field supervisor is also always present to ensure all field work, including materials and work standards, meet the technical and client expectations."
             }
         ]
+    },
+    "PortofolioPage": {
+        "title": "Our Portofolio",
+        "subtitle": "We are committed to providing the best service and satisfactory results. We work on every project wholeheartedly, because your happiness is our pride."
+    },
+    "ArticlePages": {
+        "title": "Articles",
+        "subtitle": "Get the latest and most reliable information about interior design and architecture from our experts."
+    },
+    "ContactPage": {
+        "title": "Contact",
+        "subtitle": "Get in touch with us.",
+        "form": {
+            "firstNamePlaceholder": "First Name",
+            "lastNamePlaceholder": "Last Name",
+            "emailPlaceholder": "Email",
+            "messagePlaceholder": "How can we help you?",
+            "submitButton": "WhatsApp Now"
+        },
+        "whatsappMessage": "Hi, I am {firstName} {lastName}. {message}. My email is {email}"
     }
 }

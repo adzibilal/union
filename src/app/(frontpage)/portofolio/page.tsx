@@ -1,13 +1,15 @@
 import PageHeader from '@/components/organism/PageHeader'
 import PortofolioList from '@/components/organism/portofolio/PortofolioList'
+import { useTranslations } from 'next-intl'
 import React from 'react'
 
 const PortofolioPage = () => {
+    const t = useTranslations('PortofolioPage')
     return (
         <div>
             <PageHeader
-                title='Portofolio'
-                subtitle='List of our work that we have done.'
+                title={t('title')}
+                subtitle={t('subtitle')}
             />
 
             <PortofolioList />

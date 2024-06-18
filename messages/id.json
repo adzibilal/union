@@ -151,5 +151,25 @@
                 "description": "Perusahaan kami hanya memberdayakan pekerja lapangan yang sudah mahir dan teruji di bidangnya. Seorang pengawas lapangan berpengalaman juga senantiasa hadir untukmemastikan seluruh pengerjaan lapangan, termasuk material dan standar pengerjaan, telah sesuai dengan teknis dan ekspektasi klien."
             }
         ]
+    },
+    "PortofolioPage": {
+        "title": "Portofolio Kami",
+        "subtitle": "Kami berkomitmen untuk memberikan layanan terbaik dan hasil yang memuaskan. Kami mengerjakan setiap proyek dengan sepenuh hati, karena kebahagiaan Anda adalah kebanggaan kami."
+    },
+    "ArticlePages": {
+        "title": "Artikel",
+        "subtitle": "Dapatkan informasi terbaru dan terpercaya seputar desain interior dan arsitektur dari para ahli kami."
+    },
+    "ContactPage": {
+        "title": "Kontak",
+        "subtitle": "Hubungi kami.",
+        "form": {
+            "firstNamePlaceholder": "Nama Depan",
+            "lastNamePlaceholder": "Nama Belakang",
+            "emailPlaceholder": "Email",
+            "messagePlaceholder": "Bagaimana kami dapat membantu Anda?",
+            "submitButton": "WhatsApp Sekarang"
+        },
+        "whatsappMessage": "Hi, saya {firstName} {lastName}. {message}. Email saya adalah {email}"
     }
 }
