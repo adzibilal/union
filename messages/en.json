@@ -121,5 +121,35 @@
         "contactUsNow": "Contact Us Now",
         "chatNow": "Chat Now",
         "quote": "\"WORK HARD & GREAT QUALITY IS OUR PRIORITY\""
+    },
+    "ServicesPage": {
+        "title": "OUR SERVICES",
+        "subtitle": "Improving the quality of life for customers through designs that meet aspects of aesthetics, functionality, and durability, realized in a concept with high artistic value",
+        "services": [
+            {
+                "title": "Consultation",
+                "description": "Need ideas, advice, guidance, or professional answers for the best design of your property? Accompanied directly by architectural and interior experts, you can get all the input, inspiration, and guidance on design concepts that exceed your expectations. Get a free consultation from us for the best dream home solutions."
+            },
+            {
+                "title": "Design Style Expert",
+                "description": "Starting from modern minimalist themes, Scandinavian, transitional, classic, industrial, and others - the Union Creative Design team is trained to stay up-to-date by honing their respective design skills. Regularly involved in various property projects, both residential, commercial, landscape, and others, making us experienced experts in realizing all your dream properties."
+            },
+            {
+                "title": "3D Visualization",
+                "description": "Using 3D design for realistic visualization, clients will get a multi-perspective view, including exterior and interior. All details will be presented completely and meticulously, without missing any observation and professional input from our team."
+            },
+            {
+                "title": "Safety First",
+                "description": "Both the safety aspects of the client's property and workers, we have construction standards that adhere to the best and safest field practices. With proven work procedures and construction methods, we believe that safety is one of the main keys in completing a project that truly satisfies all parties."
+            },
+            {
+                "title": "High Professionalism",
+                "description": "The beginning of professionalism is maintaining the greatest trust that has been given by each of our clients. All construction team personnel hold a commitment to professionalism, including time discipline and work efficiency, which are reflections of working integrity."
+            },
+            {
+                "title": "Architectural Understanding",
+                "description": "Our company only employs field workers who are skilled and tested in their fields. An experienced field supervisor is also always present to ensure all field work, including materials and work standards, meet the technical and client expectations."
+            }
+        ]
     }
 }
