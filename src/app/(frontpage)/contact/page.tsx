@@ -24,7 +24,7 @@ const ContactPage = () => {
         });
 
         window.open(
-            `https://wa.me/6281212345678?text=${encodeURIComponent(messageToWhatsapp)}`,
+            `https://wa.me/62811233078?text=${encodeURIComponent(messageToWhatsapp)}`,
             '_blank'
         )
     }

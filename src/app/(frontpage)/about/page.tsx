@@ -20,9 +20,9 @@ const AboutPage = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
                     <div className=''>
                         <Image
-                            src='/assets/images/porto/3.png'
+                            src='/assets/images/3.jpeg'
                             alt={t('aboutImageAlt')}
-                            width={500}
+                            width={1000}
                             height={600}
                             className='aspect-[4/5] w-full object-cover'
                         />

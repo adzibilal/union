@@ -13,11 +13,13 @@ const CTAWhatsApp = () => {
                         <FaWhatsapp className='text-5xl text-u-orange-500' />
                         <div className='mt-2'>{t('contactUsNow')}</div>
                         <div className='text-3xl font-semibold mt-2'>
-                            +62 812 3456 7890
+                            +62 811 233 078
                         </div>
                         <Link
-                            href='https://wa.me/6281234567890'
-                            className='bg-u-orange-500 text-white px-5 py-2 mt-5 inline-block'>
+                            href='https://wa.me/62811233078'
+                            className='bg-u-orange-500 text-white px-5 py-2 mt-5 inline-block'
+                            target='_blank'
+                            >
                             {t('chatNow')}
                         </Link>
                     </div>

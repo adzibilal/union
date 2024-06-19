@@ -72,7 +72,7 @@ const CalculatorDesign = () => {
             )}:%0A${roomToDesignMessage}%0A` +
             `${t('messages.submitMessage.budget')}: ${payload.budget}`
 
-        const waLink = `https://wa.me/6285156510302?text=${waMessage}`
+        const waLink = `https://wa.me/62811233078?text=${waMessage}`
 
         window.open(waLink, '_blank')
         setCurrentStep(4)

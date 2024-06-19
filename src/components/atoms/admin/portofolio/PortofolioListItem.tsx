@@ -24,7 +24,7 @@ const PortofolioListItem: React.FC<PortofolioListItemProps> = props => {
         setIsLoading(true)
         try {
             const response = await fetch(
-                `/api/cms/portofolios/${props.portofolio.slug}`,
+                `/api/cms/portofolio/${props.portofolio.slug}`,
                 {
                     method: 'DELETE'
                 }

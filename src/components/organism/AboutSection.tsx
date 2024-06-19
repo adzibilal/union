@@ -10,9 +10,9 @@ const AboutSection = () => {
         <div className='max-container py-32'>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
                 <Image
-                    src='/assets/images/porto/1.png'
+                    src='/assets/images/1.jpeg'
                     alt='about'
-                    width={500}
+                    width={1000}
                     height={600}
                     className='aspect-[4/5] w-full object-cover'
                 />
