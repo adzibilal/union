@@ -335,5 +335,29 @@
         "footer-note": "Seluruh Hak Cipta - UNION CREATIVE DESIGN © 2024",
         "privacy-policy": "Kebijakan Privasi",
         "terms-of-use": "Syarat Penggunaan"
+    },
+    "Sliders": {
+        "items": [
+            {
+                "title": "Ubah Ruang Anda",
+                "subTitle": "Mewujudkan visi Anda dengan desain inovatif",
+                "button": "Temukan Lebih Lanjut"
+            },
+            {
+                "title": "Solusi Interior Elegan",
+                "subTitle": "Menciptakan ruang yang canggih dan fungsional",
+                "button": "Portofolio Kami"
+            },
+            {
+                "title": "Layanan Desain Personalisasi",
+                "subTitle": "Desain yang disesuaikan dengan gaya unik Anda",
+                "button": "Hubungi Kami"
+            },
+            {
+                "title": "Interior Kantor Inovatif",
+                "subTitle": "Menciptakan ruang kerja yang produktif dan inspiratif",
+                "button": "Pelajari Lebih Lanjut"
+            }
+        ]
     }
 }

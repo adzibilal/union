@@ -11,36 +11,38 @@ import 'swiper/css/navigation'
 // import required modules
 import { Autoplay } from 'swiper/modules'
 import CarouselItem from '../molecules/CarouselItem'
+import { useTranslations } from 'next-intl'
 
 const CarouselHero = () => {
+    const t = useTranslations('Sliders')
     const dataCarousel = [
         {
             src: '/assets/images/sliders/1.jpg',
-            title: 'Welcome to Our Website',
-            subTitle: 'We are here to help you',
-            button: 'Get Started',
-            linkButton: '/contact'
+            title: t('items.0.title'),
+            subTitle: t('items.0.subTitle'),
+            button: t('items.0.button'),
+            linkButton: '/services'
         },
         {
             src: '/assets/images/sliders/2.jpg',
-            title: 'We are the best in the business',
-            subTitle: 'We provide the best service for you',
-            button: 'Contact Us',
-            linkButton: '/contact'
+            title: t('items.1.title'),
+            subTitle: t('items.1.subTitle'),
+            button: t('items.1.button'),
+            linkButton: '/portfolio'
         },
         {
             src: '/assets/images/sliders/3.jpg',
-            title: 'We are the best in the business',
-            subTitle: 'We provide the best service for you',
-            button: 'Contact Us',
+            title: t('items.2.title'),
+            subTitle: t('items.2.subTitle'),
+            button: t('items.2.button'),
             linkButton: '/contact'
         },
         {
             src: '/assets/images/sliders/4.jpg',
-            title: 'We are the best in the business',
-            subTitle: 'We provide the best service for you',
-            button: 'Contact Us',
-            linkButton: '/contact'
+            title: t('items.3.title'),
+            subTitle: t('items.3.subTitle'),
+            button: t('items.3.button'),
+            linkButton: '/projects'
         }
     ]
 
