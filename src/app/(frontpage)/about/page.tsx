@@ -37,7 +37,7 @@ const AboutPage = () => {
                             <Link
                                 href={`/portofolio`}
                                 className='bg-u-orange-500 text-white px-6 py-3 uppercase'>
-                                {t('portofolioButton')}
+                                {t('portfolioButton')}
                             </Link>
                         </div>
                     </div>
