@@ -67,6 +67,7 @@ const OurTeam = () => {
             image: '/assets/images/team/hana-cropped.jpg'
         },
     ]
+    
 
     const t = useTranslations('OurTeam')
     return (
