@@ -55,7 +55,17 @@ const OurTeam = () => {
             name: 'Farid Fadillah',
             role: 'Manajer ADM/Keuangan',
             image: '/assets/images/team/2.webp'
-        }
+        },
+        {
+            name: 'Sherlyn Vira Wantika',
+            role: 'Designer Interior',
+            image: '/assets/images/team/sherlyn.jpg'
+        },
+        {
+            name: 'Hana Dwi Puspitasari',
+            role: 'Designer Interior',
+            image: '/assets/images/team/hana.jpg'
+        },
     ]
 
     const t = useTranslations('OurTeam')
