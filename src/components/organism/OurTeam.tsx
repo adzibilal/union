@@ -59,12 +59,12 @@ const OurTeam = () => {
         {
             name: 'Sherlyn Vira Wantika',
             role: 'Designer Interior',
-            image: '/assets/images/team/sherlyn.jpg'
+            image: '/assets/images/team/sherlyn-new.jpg'
         },
         {
             name: 'Hana Dwi Puspitasari',
             role: 'Designer Interior',
-            image: '/assets/images/team/hana.jpg'
+            image: '/assets/images/team/hana-cropped.jpg'
         },
     ]
 
