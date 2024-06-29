@@ -66,8 +66,13 @@ const OurTeam = () => {
             role: 'Designer Interior',
             image: '/assets/images/team/hana-cropped.jpg'
         },
+        {
+            name: 'Heli Kusmayadi',
+            role: 'Designer Interior - Arsitek',
+            image: '/assets/images/team/heli-cropped.jpg'
+        },
     ]
-    
+
 
     const t = useTranslations('OurTeam')
     return (
