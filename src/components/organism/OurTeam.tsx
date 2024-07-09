@@ -58,21 +58,20 @@ const OurTeam = () => {
         },
         {
             name: 'Sherlyn Vira Wantika',
-            role: 'Designer Interior',
+            role: 'Arsitek',
             image: '/assets/images/team/sherlyn-new.jpg'
         },
         {
             name: 'Hana Dwi Puspitasari',
-            role: 'Designer Interior',
+            role: 'Arsitek',
             image: '/assets/images/team/hana-cropped.jpg'
         },
         {
             name: 'Heli Kusmayadi',
-            role: 'Designer Interior - Arsitek',
+            role: 'Arsitek',
             image: '/assets/images/team/heli-cropped.jpg'
-        },
+        }
     ]
-
 
     const t = useTranslations('OurTeam')
     return (

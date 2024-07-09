@@ -37,10 +37,10 @@ const Navbar = () => {
                             label={t('pages')}
                             submenu={[
                                 { href: '/style-quiz', label: t('style-quiz') },
-                                {
-                                    href: '/calculator',
-                                    label: t('calculator')
-                                },
+                                // {
+                                //     href: '/calculator',
+                                //     label: t('calculator')
+                                // },
                                 { href: '/contact', label: t('contact') },
                                 { href: '/faq', label: t('faq') }
                             ]}
