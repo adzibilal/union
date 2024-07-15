@@ -1,21 +1,22 @@
 import FloatingWaButton from '@/components/molecules/FloatingWaButton';
 import Footer from '@/components/organism/Footer';
 import Navbar from '@/components/organism/Navbar';
+import UnderConstruction from '@/components/organism/UnderConstruction';
 import React from 'react';
 
 const FrontpageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <div>
-            <Navbar />
+            {/* <Navbar />
 
-            {/* Add your main content component here */}
             <main>
                 {children}
             </main>
 
             <FloatingWaButton />
 
-           <Footer />
+           <Footer /> */}
+           <UnderConstruction />
         </div>
     );
 };
