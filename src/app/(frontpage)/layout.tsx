@@ -7,7 +7,7 @@ import React from 'react';
 const FrontpageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return (
         <div>
-            {/* <Navbar />
+            <Navbar />
 
             <main>
                 {children}
@@ -15,8 +15,8 @@ const FrontpageLayout: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
             <FloatingWaButton />
 
-           <Footer /> */}
-           <UnderConstruction />
+           <Footer />
+           {/* <UnderConstruction /> */}
         </div>
     );
 };
