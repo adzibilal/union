@@ -22,10 +22,10 @@ const PortofolioSection = () => {
                 </div>
                 <div className=''>
                     <Image
-                        src='/assets/images/2.jpeg'
+                        src='/assets/images/home-2.png'
                         alt='about'
-                        width={500}
-                        height={600}
+                        width={2000}
+                        height={1000}
                         className='aspect-[4/5] w-full object-cover'
                     />
                 </div>
