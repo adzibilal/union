@@ -15,11 +15,16 @@ import Image from 'next/image'
 
 const SliderLogoFooter = () => {
     const dataCarousel = [
-        '/assets/images/logo/logo-1.svg',
-        '/assets/images/logo/logo-2.svg',
-        '/assets/images/logo/logo-3.svg',
-        '/assets/images/logo/logo-4.svg',
-        '/assets/images/logo/logo-5.svg',
+        '/assets/images/clients/1.png',
+        '/assets/images/clients/2.png',
+        '/assets/images/clients/3.png',
+        '/assets/images/clients/4.png',
+        '/assets/images/clients/5.png',
+        '/assets/images/clients/6.png',
+        '/assets/images/clients/7.png',
+        '/assets/images/clients/8.png',
+        '/assets/images/clients/9.png',
+        '/assets/images/clients/10.png',
     ]
     return (
         <Swiper
@@ -40,9 +45,9 @@ const SliderLogoFooter = () => {
                     <Image 
                         src={item}
                         alt='logo'
-                        width={150}
-                        height={150}
-                        className='aspect-video mx-auto'
+                        width={200}
+                        height={200}
+                        className='aspect-video mx-auto rounded-md shadow-md'
                     />
                 </SwiperSlide>
             ))}
