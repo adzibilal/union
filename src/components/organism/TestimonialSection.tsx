@@ -71,7 +71,7 @@ const TestimonialSection = () => {
             profession: 'Bandung'
         },
         {
-            rating: 4,
+            rating: 5,
             testi: 'Rencana renovasi kecil-kecilan rumah warisan peninggalan orang tua supaya terlihat lebih terawat, gamau direnovasi macem-macem. Akhirnya beberapa bagian rumah diganti dengan material yang lebih kuat dan kokoh atas rekomendasi team UNION tanpa merubah vibes rumah masa kecil saya hehe hasil renovasinya membuat rumah orangtua saya lebih hidup, terima kasih UNION🥰',
             ava: '/assets/images/maryam.png',
             name: 'Maryam',
