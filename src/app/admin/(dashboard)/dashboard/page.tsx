@@ -17,7 +17,7 @@ const DashboardPage = async () => {
                 Welcome to the Admin Dashboard
             </h1>
 
-            {/* {!session.user.hasResetPassword && (
+            {!session.user.hasResetPassword && (
                 <div
                     className='bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-5 '
                     role='alert'>
@@ -33,7 +33,7 @@ const DashboardPage = async () => {
                         <span className='text-blue-500 hover:text-blue-400'>Reset Now</span>
                     </Link>
                 </div>
-            )} */}
+            )}
 
             <StatisticDashboard />
         </div>
