@@ -14,17 +14,18 @@ generator client {
 }
 
 model User {
-  id         String       @id @default(auto()) @map("_id") @db.ObjectId
-  email      String       @unique
-  name       String?
-  image      String?
-  password   String
-  isActive   Boolean      @default(true)
-  role       String       @default("USER")
-  createdAt  DateTime     @default(now())
-  updatedAt  DateTime     @updatedAt
-  Article    Article[]
-  Portofolio Portofolio[]
+  id               String       @id @default(auto()) @map("_id") @db.ObjectId
+  email            String       @unique
+  name             String?
+  image            String?
+  password         String
+  isActive         Boolean      @default(true)
+  hasResetPassword Boolean      @default(false)
+  role             String       @default("USER")
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+  Article          Article[]
+  Portofolio       Portofolio[]
 }
 
 model Article {

@@ -55,7 +55,7 @@ const DropdownMenu: React.FC<DropDownMenuProps> = ({ session }) => {
             </div>
 
             <div
-                className={`absolute right-0 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${
+                className={`absolute right-0 z-10 mt-2 w-56 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none ${
                     isOpen ? 'block' : 'hidden'
                 }`}
                 role='menu'>

@@ -30,6 +30,7 @@ export async function POST(req: NextRequest, res: NextResponse) {
         email: user.email,
         image: user.image,
         isActive: user.isActive,
+        hasResetPassword: user.hasResetPassword,
         role: user.role
     }
 

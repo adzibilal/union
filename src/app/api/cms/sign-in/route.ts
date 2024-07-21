@@ -24,9 +24,9 @@ export async function POST(req: NextRequest, res: NextResponse) {
         return new NextResponse('Invalid credentials', { status: 401 })
     }
 
-    if (user.role !== "ADMIN") {
-        return new NextResponse('Invalid credentials you are not an administrator', { status: 401 })
-    }
+    // if (user.role !== "ADMIN") {
+    //     return new NextResponse('Invalid credentials you are not an administrator', { status: 401 })
+    // }
     
     const response = {
         id: user.id,

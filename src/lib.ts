@@ -12,6 +12,7 @@ interface LoginResponse {
     email: string
     image: string | null
     isActive: boolean
+    hasResetPassword: boolean
     role: string | null
 }
 export interface Session {
