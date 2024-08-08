@@ -31,7 +31,7 @@ const CarouselHero = () => {
             linkButton: '/portfolio'
         },
         {
-            src: '/assets/images/sliders/hero-3.png',
+            src: '/assets/images/sliders/banner1.jpg',
             title: t('items.2.title'),
             subTitle: t('items.2.subTitle'),
             button: t('items.2.button'),
