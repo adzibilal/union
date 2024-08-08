@@ -24,14 +24,14 @@ const CarouselHero = () => {
             linkButton: '/services'
         },
         {
-            src: '/assets/images/sliders/hero-2.png',
+            src: '/assets/images/sliders/banner1.jpg',
             title: t('items.1.title'),
             subTitle: t('items.1.subTitle'),
             button: t('items.1.button'),
             linkButton: '/portfolio'
         },
         {
-            src: '/assets/images/sliders/banner1.jpg',
+            src: '/assets/images/sliders/hero-3.png',
             title: t('items.2.title'),
             subTitle: t('items.2.subTitle'),
             button: t('items.2.button'),
