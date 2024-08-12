@@ -12,6 +12,8 @@ import 'swiper/css/navigation'
 import { Autoplay } from 'swiper/modules'
 import CarouselItem from '../molecules/CarouselItem'
 import { useTranslations } from 'next-intl'
+import { FaWhatsapp } from 'react-icons/fa'
+import Link from 'next/link'
 
 const CarouselHero = () => {
     const t = useTranslations('Sliders')
@@ -62,6 +64,26 @@ const CarouselHero = () => {
                 className='mySwiper'>
                 {dataCarousel.map((item, index) => (
                     <SwiperSlide key={index}>
+                        <div className='flex items-center justify-center gap-3 p-2 bg-green-500 text-white'>
+                            <Link
+                                href={
+                                    'https://api.whatsapp.com/send?phone=628112434411&text=Halo%20saya%20ingin%20bertanya%20tentang%20layanan%20yang%20anda%20tawarkan'
+                                }
+                                target='_blank'
+                                className='flex gap-3 items-center cursor-pointer'>
+                                <FaWhatsapp />
+                                0811-2434-411
+                            </Link>
+                            <Link
+                                href={
+                                    'https://api.whatsapp.com/send?phone=62811233078&text=Halo%20saya%20ingin%20bertanya%20tentang%20layanan%20yang%20anda%20tawarkan'
+                                }
+                                target='_blank'
+                                className='flex gap-3 items-center cursor-pointer'>
+                                <FaWhatsapp />
+                                0811-233-078
+                            </Link>
+                        </div>
                         <CarouselItem
                             src={item.src}
                             title={item.title}
