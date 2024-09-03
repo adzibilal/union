@@ -60,6 +60,7 @@ const PortofolioList = () => {
                 className='w-full px-3 py-2 border border-zinc-300 rounded-md focus:outline-none mt-10'
                 onChange={e => handleChangeKeyword(e.target.value)}
             />
+
             {isLoading ? (
                 <PortofolioListSkeleton />
             ) : portofolios && portofolios.length === 0 ? (

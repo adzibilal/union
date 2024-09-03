@@ -339,18 +339,18 @@
     "Sliders": {
         "items": [
             {
-                "title": "Ubah Ruang Anda",
-                "subTitle": "Mewujudkan visi Anda dengan desain inovatif",
+                "title": "Union Memiliki Ruang Workshop",
+                "subTitle": "Tempat dimana ide-ide menjadi nyata",
                 "button": "Temukan Lebih Lanjut"
+            },
+            {
+                "title": "Union Memiliki Ruang Studio",
+                "subTitle": "Yang menciptakan solusi interior yang personal dan inovatif",
+                "button": "Portofolio Kami"
             },
             {
                 "title": "Solusi Interior Elegan",
                 "subTitle": "Menciptakan ruang yang canggih dan fungsional",
-                "button": "Portofolio Kami"
-            },
-            {
-                "title": "Layanan Desain Personalisasi",
-                "subTitle": "Desain yang disesuaikan dengan gaya unik Anda",
                 "button": "Hubungi Kami"
             },
             {

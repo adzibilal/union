@@ -19,33 +19,27 @@ const CarouselHero = () => {
     const t = useTranslations('Sliders')
     const dataCarousel = [
         {
-            src: '/assets/images/sliders/hero-1.png',
+            src: '/assets/images/sliders/new1.JPG',
             title: t('items.0.title'),
             subTitle: t('items.0.subTitle'),
             button: t('items.0.button'),
             linkButton: '/services'
         },
         {
-            src: '/assets/images/sliders/banner1.jpg',
+            src: '/assets/images/sliders/new2.jpg',
             title: t('items.1.title'),
             subTitle: t('items.1.subTitle'),
             button: t('items.1.button'),
             linkButton: '/portfolio'
         },
         {
-            src: '/assets/images/sliders/hero-3.png',
+            src: '/assets/images/sliders/new3.jpg',
             title: t('items.2.title'),
             subTitle: t('items.2.subTitle'),
             button: t('items.2.button'),
             linkButton: '/contact'
         },
-        {
-            src: '/assets/images/sliders/hero-4.png',
-            title: t('items.3.title'),
-            subTitle: t('items.3.subTitle'),
-            button: t('items.3.button'),
-            linkButton: '/projects'
-        }
+        
     ]
 
     return (

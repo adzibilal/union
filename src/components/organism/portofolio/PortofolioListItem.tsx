@@ -1,3 +1,4 @@
+'use client'
 import { PortofolioTableType } from '@/types/admin/portofolio/type'
 import { diffForHumans } from '@/utils'
 import Image from 'next/image'
@@ -31,8 +32,16 @@ const PortofolioListItem: React.FC<PortofolioListItemProps> = ({
         createdAt
     } = portofolio
 
+    const handleClick = () => {
+       // blank href to https://drive.google.com/drive/folders/1ykmE692mGJ5xv0bwxtloUs2gBBC1xgFP
+        window.open('https://drive.google.com/file/d/12xnmpB75A0X-Lu0UUOLyBDMBYjb4lM5t/view?usp=sharing', '_blank')
+    }
+
     return (
-        <div className='shadow-lg'>
+        <div className='shadow-lg relative'>
+            <div className='bg-u-orange-500 text-white top-2 left-2 px-3 py-1 font-semibold cursor-pointer absolute' onClick={handleClick}>
+                Lihat Company Profile
+            </div>
             <Image
                 src={image || '/assets/images/porto/1.png'}
                 alt='about'

@@ -20,7 +20,7 @@ const AboutPage = () => {
                 <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 items-center'>
                     <div className=''>
                         <Image
-                            src='/assets/images/3.jpeg'
+                            src='/assets/images/tentang-kami.png'
                             alt={t('aboutImageAlt')}
                             width={1000}
                             height={600}

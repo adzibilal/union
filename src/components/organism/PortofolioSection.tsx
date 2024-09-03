@@ -22,7 +22,7 @@ const PortofolioSection = () => {
                 </div>
                 <div className=''>
                     <Image
-                        src='/assets/images/home-2.png'
+                        src='/assets/images/3.png'
                         alt='about'
                         width={2000}
                         height={1000}

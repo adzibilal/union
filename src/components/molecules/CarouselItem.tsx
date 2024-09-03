@@ -18,9 +18,9 @@ const CarouselItem: React.FC<CarouselItemProps> = ({
     linkButton
 }) => {
     return (
-        <div className='aspect-video lg:aspect-[21/8] relative'>
+        <div className='relative'>
             <div className='w-full h-[30%] bg-gradient-to-b from-zinc-950/50 to-transparent absolute top-0 left-0 z-10'></div>
-            <Image src={src} alt='hero' layout='fill' objectFit='cover' />
+            <Image src={src} alt='hero' className='w-full h-auto' width={1500} height={1500} />
             <div className='max-container absolute left-[50%] bottom-5 md:bottom-20 translate-x-[-50%] z-20 max-sm:w-full'>
                 <div className='text-white text-lg md:text-4xl font-extrabold text-center'>
                     <h1 className='uppercase'>{title}</h1>
